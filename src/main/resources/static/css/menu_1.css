@@ -1,0 +1,189 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 4 jun. 2022, 14:26:09
+    Author     : Patrick
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+
+*{
+    margin: 0;
+    font-family: 'Joan', serif;
+    text-decoration: none;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(54,53,53,1) 100%);
+}
+
+.navbar{
+    height:10vh;
+    width:100%;
+    display:flex; /*como se va alinear dentro caja - */
+    align-items: center;
+    background-color: black;
+    position:fixed;
+    border-color: white;
+    z-index: 2;
+}
+.logo{
+    width:110px;
+    cursor:pointer;
+    padding-left: 100px;
+}
+.login{
+    width: 20%;
+    padding-left: 140px;
+}
+.login ul li a{ /*estilo del boton login*/
+    cursor:pointer;
+}
+
+nav ul li { /*menu del centro*/
+    display: inline-block;
+    list-style:none;/*elimina los bullets*/
+    margin:0px 30px; /*espacio entre objetos*/
+    padding-left: 60px;
+    padding-right: 50px;
+}
+nav ul li a:hover,a:focus {
+    background-size: 100% 2px;
+    transition: background-size .5s;
+    color:green;
+}
+nav ul li a{
+    font-size: 20px;
+    color:white;
+    text-decoration: none; /*quitar subrayado*/
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+h1{
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translate(-45%);
+    text-align: center;
+    color: white;
+}
+
+
+.lista{
+    position: relative;
+    top: 220px;
+    margin-left: 410px;
+    margin-right: auto;
+
+    /*border-top: 1px solid #972814;*/
+    box-sizing: border-box;
+    width: 650px;
+    cursor: pointer;
+}
+
+.categorias{
+    position: fixed;
+}
+
+.lista ul{
+    width: 75px;
+}
+
+.lista ul li{
+    list-style: none;
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: white;
+    /*border-bottom: 1px solid #336124;*/
+
+}
+
+.otro{
+    text-decoration: none; /*quitar subrayado*/
+    color: white;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+.lista ul li a:hover,a:focus {
+    background-size: 100% 2px;
+    transition: background-size .5s;
+    color:green;
+}
+
+.actual{
+    text-decoration: none;
+    color:#972814;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    transition: background-size .3s;
+}
+
+.productos{
+    position: relative;
+    margin-left: 200px;
+    margin-right: auto;
+
+    /*border-top: 1px solid #972814;*/
+    box-sizing: border-box;
+    width: 650px;
+    cursor: pointer;
+}
+
+.producto{
+    position: relative;
+    background-color: whitesmoke;
+    width: 700px;
+    height: 180px;
+    padding: 50px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05); /*para hacer un sombreado a la caja*/
+    color: black;
+    padding-right: 30px;
+}
+
+.imagen{
+    height: 120px;
+    width: 130px;
+    border-radius: 10px;
+    margin-left: -25px;
+}
+
+h4{
+    font-size: 20px;
+}
+
+.titulos{
+    display:flex; /*como se va alinear dentro caja - */
+    align-items: center;
+    margin-bottom: 15px;
+    margin-right: 0;
+
+}
+
+.texto{
+    margin-left: 40px;
+}
+
+h5{
+    font-size: 20px;
+    margin-left: 315px;
+}
