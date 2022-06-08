@@ -1,0 +1,195 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 7, 2022, 9:53:01 PM
+    Author     : Hillary
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Joan', serif;
+}
+
+body{
+    background-image: url(../images/general/pizza3.jpg);
+    background-position:center;
+    /* Hace que la imagen cubra todo el div como tal */
+    background-size: cover;
+    /*overflow:hidden;*/
+    height: 100vh;
+}
+
+.navbar{
+    height:10vh;
+    width:100%;
+    display:flex; /*como se va alinear dentro caja - */
+    align-items: center;
+    background-color: black;
+    position:fixed; /*si se pone fijo queda un borde raro preguntar*/ 
+    border-color: white;
+    z-index: 2;
+}
+
+.logo{
+    width:70px;
+    cursor:pointer;
+    padding-left: 100px;
+}
+.login{
+    width: 20%;
+    padding-left: 140px;
+}
+
+.login ul li a{ /*estilo del boton login*/
+    cursor:pointer;
+}
+
+nav ul li { /*menu del centro*/
+    display: inline-block;
+    list-style:none;/*elimina los bullets*/
+    margin:0px 30px; /*espacio entre objetos*/
+    padding-left: 60px;
+    padding-right: 50px;
+}
+nav ul li a:hover,a:focus {
+    background-size: 100% 2px;
+    transition: background-size .5s;
+    color:green;
+}
+nav ul li a{
+    font-size: 20px;
+    color:white;
+    text-decoration: none; /*quitar subrayado*/
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+
+.center{
+    position:absolute;
+    top:60%;
+    left:50%;
+    width: 600px;
+    height: 720px;
+    background:white;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
+}
+
+.center h1{
+    text-align:center;
+    padding: 15px;
+    border-bottom: 1px solid silver;
+}
+
+.center h2{
+    text-align:left;
+    padding: 10px 10px 3px 10px;
+    font-size: 16px;
+}
+
+.center p{
+    text-align:left;
+    padding-left: 25px; 
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.center form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .txt_field{
+    position:relative;
+    border-bottom: 2px solid silver;
+    margin: 35px 10px 10px 10px;
+    
+}
+
+form .txt_field_cv{
+    position:relative;
+    margin: 10px 10px 10px 10px;
+    
+}
+
+.txt_field input{
+    width: 90%;
+    padding: 0 20px;
+    height: 27px;
+    font-size: 15px;
+    border: none;
+    background: none;
+    
+}
+
+.txt_field label{
+    position: absolute;
+    top: 20%;
+    left: 45px;
+    color: #adadad;
+    transform: translate(-50%);
+    font-size: 15px;
+}
+
+input[type="submit"]{
+    width: 50%;
+    height: 40px;
+    border: 1px solid;
+    background: #78b83a;
+    border-color: #78b83a;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    color: black;
+    margin-left: 120px;
+}
+
+input[type="submit"]:hover{
+    border-color: #336124;
+    background: #336124;
+    transition: .5s;
+}
+
+button{
+    display:block; 
+    width:120px; 
+    height:30px;
+    margin-left: 180px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.txt_field span::before{
+    content: '';
+    position: absolute;
+    top:50%;
+    left: 5px;
+    color: #adadad;
+    transform:translateY(-50%);
+    font-size: 14px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt_field input:focus~label,
+.txt_field input:valid~label{
+    top:-20px;
+    color: #adadad;
+}
+
+.txt_field input:focus~span::before,
+.txt_field input:valid~span::before{
+    width:100%;
+}

@@ -1,0 +1,123 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 7, 2022, 9:53:52 PM
+    Author     : Hillary
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+
+/* 
+  * es para que aplique a todoooo 
+*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Joan', serif;
+}
+
+body{
+    background: black;/*linear-gradient(120deg, black, #454140);*/
+    height: 200vh;
+}
+
+.navbar{
+    height:10vh;
+    width:100%;
+    display:flex; /*como se va alinear dentro caja - */
+    align-items: center;
+    background-color: black;
+    position:fixed; /*si se pone fijo queda un borde raro preguntar*/ 
+    border-color: white;
+    z-index: 2;
+}
+
+.logo{
+    width:170px;
+    cursor:pointer;
+    padding-left: 100px;
+}
+.login{
+    width: 20%;
+    padding-left: 140px;
+}
+
+.login ul li a{ /*estilo del boton login*/
+    cursor:pointer;
+}
+
+nav ul li { /*menu del centro*/
+    display: inline-block;
+    list-style:none;/*elimina los bullets*/
+    margin:0px 30px; /*espacio entre objetos*/
+    padding-left: 60px;
+    padding-right: 50px;
+}
+nav ul li a:hover,a:focus {
+    background-size: 100% 2px;
+    transition: background-size .5s;
+    color:green;
+}
+nav ul li a{
+    font-size: 20px;
+    color:white;
+    text-decoration: none; /*quitar subrayado*/
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    font-size: 44px;
+    padding-top: 120px;
+    
+}
+.boxes{
+    padding: 100px;
+}
+.box{
+   display: inline-block;
+   width: 300px;
+   height: 380px;
+   background:white;
+   margin: 30px;
+   border-radius: 10px;
+   box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
+   transform: translate(30%, -20%);
+   
+}
+
+.box:hover {
+  background: #E4E4E4;
+  border-color: #9B9B9B;
+  transition: .5s;
+}
+
+.box div{
+   border-style: solid;
+   position: relative;
+   margin-top: 20px;
+   background: #78b83a;
+   border-color: #78b83a;
+   text-align:center;
+   font-weight: bold;
+}
+
+.boxes div h2{
+   font-size: 25px;
+   text-align:center;
+   padding:10px;
+}
+
+.box img{
+    width: 300px;
+}

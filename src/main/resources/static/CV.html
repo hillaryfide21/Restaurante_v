@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Unete a nuestro equipo</title>
+        <link rel="stylesheet" href="css/CV.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        
+    </head>
+    
+    <body>
+        <div class='nav-container'>
+            <div class="navbar">
+                <img src="images/navbar/pizza.png" class='logo' alt="alt"/>
+                
+                
+                <nav> 
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="index.html">Menu</a></li>
+                        <li><a href="/login.html">Restaurantes</a></li>
+                        <li><a href="/p2.html">Acerca de nosotros</a></li>                       
+                    </ul>
+                </nav>
+                
+                <nav class="login">
+                    <ul>
+                        <li><a href="/login.html">Login</a></li>
+                    </ul>
+                </nav>
+            </div> 
+              </div>
+        
+        
+        <div class='center'>
+             <form method="post">
+                <h1> ÚNETE A NUESTRO EQUIPO</h1>
+                <h2> Datos personales </h2>
+                <div class="txt_field">
+                    <input type="text" required>
+                    <label>Nombre</label>
+                </div>
+                <div class="txt_field">
+                    <input type="text" required>
+                    <label>Apellidos</label>
+                </div>
+                <div class="txt_field">
+                    <input type="text" required>
+                    <label>Identificacion</label>
+                </div>
+                
+                <h2> Contacto </h2>
+                <div class="txt_field">
+                    <input type="text" required>
+                    <label>Celular</label>
+                </div>
+                <div class="txt_field">
+                    <input type="text" required>
+                    <label>Correo</label>
+                </div>
+                <h2> Curriculum Vitae </h2>
+                <p>A continuacion debe cargar su curriculum vitae, el cual sera revisado por nuestro equipo de recursos humanos para su revision</p>
+                
+                <div class="txt_field_cv">
+                   <button onclick="document.getElementById('getFile').click()">Subir archivo</button>
+                   <input type='file' id="getFile" style="display:none">
+                </div>
+              
+                <input type="submit" value="Enviar">
+            </form>
+        </div>    
+    </body>
+</html>
