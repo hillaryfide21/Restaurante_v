@@ -1,0 +1,96 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 6 jun. 2022, 13:55:03
+    Author     : Sky
+*/
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+.tittle {
+    text-align: center;
+    color: green;
+    text-transform: uppercase;
+    padding-bottom: 5.9px;
+    font-size: 4REM;  
+    background-color: black;
+}
+.tittle span{
+    color: yellowgreen;
+    text-transform: uppercase;
+  padding: 12px;
+}
+.Acerca{
+    color: WHITE;
+    background-image:url(../images/AcercaDeNosotros/Many-kinds.jpg);
+    width: 100%;
+    position: absolute;
+}
+.Acerca .flechas {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.Boton{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.9rem 3rem;
+    font-size: 1.7rem;
+    color:black;
+    background: green;
+    border-bottom: black;
+    cursor: pointer;
+    border-radius: 25%;
+}
+.Boton:hover{
+    letter-spacing: .1rem;
+}
+.img {
+ height: 200%;
+ width: 400%;
+ object-fit: cover;
+}
+.IMG1 {
+ height:500px;
+ width: 500px;
+ right: 20%;
+  padding: 70px 30px;
+}
+.contenido1 h3{
+    font-size: 50PX;
+}
+.contenido1{
+font-size: 35PX;
+ background: rgba(34,34,34,0.75);
+ background-color: rgba(0,0,0,0.8);
+}
+.contenido2 .h3{  font-size: 60PX;
+}
+.contenido2{
+    padding:   60px ;
+    font-size: 30PX;
+     background: rgba(34,34,34,0.75);
+ background-color: rgba(0,0,0,0.8);
+ padding-bottom: 2px;
+}
+.contenido3{
+      padding:   60px ;
+    font-size: 30PX;
+    top: 100%;
+     background: rgba(34,34,34,0.75);
+ background-color: rgba(0,0,0,0.8);
+}
+.Acerca .Logo{
+    width: 100px;
+    height: 90px;
+    border-radius: 50%;
+    position: absolute;
+    top: 1%;
+    left: 1%;
+}
