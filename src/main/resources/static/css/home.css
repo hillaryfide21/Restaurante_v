@@ -18,7 +18,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     z-index: 2;
 }
 .logo{
-    width:110px;
+    width:60px;
     cursor:pointer;
     padding-left: 100px;
 }
@@ -57,7 +57,7 @@ nav ul li a{
 }
 body{
     margin: 0px;
-    background-image: url(../images/home/italy.jpg);
+    background-image: url(../images/general/pizza3.jpg);
     background-attachment: fixed;
 }/*hasta aqui el navbar*/
 

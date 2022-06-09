@@ -3,18 +3,70 @@
     Author     : Sky
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+
 body{
     margin: 0;
     padding: 0;
     background-image:url(../images.LoginT/wallpaperbetter.com_1920x1080.jpg);
     background-size: cover;
-    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Joan', serif;
     height: 100vh;
 }
+
+.navbar{
+    height:10vh;
+    width:100%;
+    display:flex; /*como se va alinear dentro caja - */
+    align-items: center;
+    background-color: black;
+    position:fixed; /*si se pone fijo queda un borde raro preguntar*/ 
+    border-color: white;
+    z-index: 2;
+}
+
+.logo{
+    width:70px;
+    cursor:pointer;
+    padding-left: 100px;
+}
+.login{
+    width: 20%;
+    padding-left: 140px;
+}
+
+.login ul li a{ /*estilo del boton login*/
+    cursor:pointer;
+}
+
+nav ul li { /*menu del centro*/
+    display: inline-block;
+    list-style:none;/*elimina los bullets*/
+    margin:0px 30px; /*espacio entre objetos*/
+    padding-left: 60px;
+    padding-right: 50px;
+}
+nav ul li a:hover,a:focus {
+    background-size: 100% 2px;
+    transition: background-size .5s;
+    color:green;
+}
+nav ul li a{
+    font-size: 20px;
+    color:white;
+    text-decoration: none; /*quitar subrayado*/
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
 .CONTENEDOR{
     width: 320px;
-    height: 460px;
+    height: 440px;
     background: black;
     color: WHITE;
     top: 10%;
@@ -23,7 +75,8 @@ body{
     transform: translate (-50%,-50%);
     box-sizing: content-box;
     padding: 70px 30px;
-    size: auto; 
+    size: auto;
+    margin-top: 3%;
 }
 .CONTENEDOR .Logo{
     width: 100px;
