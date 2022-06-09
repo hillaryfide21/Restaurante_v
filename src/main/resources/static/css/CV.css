@@ -52,7 +52,7 @@ body{
 nav ul li { /*menu del centro*/
     display: inline-block;
     list-style:none;/*elimina los bullets*/
-    margin:0px 30px; /*espacio entre objetos*/
+    margin:0px 20px; /*espacio entre objetos*/
     padding-left: 60px;
     padding-right: 50px;
 }
@@ -76,10 +76,10 @@ nav ul li a{
 
 .center{
     position:absolute;
-    top:60%;
+    top:55%;
     left:50%;
     width: 600px;
-    height: 720px;
+    height: 700px;
     background:white;
     transform: translate(-50%, -50%);
     border-radius: 10px;

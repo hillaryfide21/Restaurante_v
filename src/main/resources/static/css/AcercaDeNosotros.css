@@ -6,19 +6,71 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Created on : 6 jun. 2022, 13:55:03
     Author     : Sky
 */
-@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
 *{
     margin: 0;
     padding:0;
     box-sizing: border-box;
-    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Joan', serif;
 }
+.navbar{
+    height:10vh;
+    width:100%;
+    display:flex; /*como se va alinear dentro caja - */
+    align-items: center;
+    background-color: black;
+    position:fixed; /*si se pone fijo queda un borde raro preguntar*/ 
+    border-color: white;
+    z-index: 2;
+}
+
+.logo{
+    width:80px;
+    cursor:pointer;
+    padding-left: 20px;
+}
+.login{
+    width: 100px;
+    padding-left: 100px;
+}
+
+.login ul li a{ /*estilo del boton login*/
+    cursor:pointer;
+}
+
+nav ul li { /*menu del centro*/
+    display: inline-block;
+    list-style:none;/*elimina los bullets*/
+    margin:0px 20px; /*espacio entre objetos*/
+    padding-left: 60px;
+    padding-right: 50px;
+}
+nav ul li a:hover,a:focus {
+    background-size: 100% 2px;
+    transition: background-size .5s;
+    color:green;
+}
+nav ul li a{
+    font-size: 20px;
+    color:white;
+    text-decoration: none; /*quitar subrayado*/
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+
+
 .tittle {
     text-align: center;
     color: green;
     text-transform: uppercase;
     padding-bottom: 5.9px;
-    font-size: 4REM;  
+    padding-top:20px;
+    font-size: 3REM;  
     background-color: black;
 }
 .tittle span{
@@ -31,6 +83,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     background-image:url(../images/AcercaDeNosotros/Many-kinds.jpg);
     width: 100%;
     position: absolute;
+    padding-top: 60px;
 }
 .Acerca .flechas {
     display: flex;
@@ -63,14 +116,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
   padding: 70px 30px;
 }
 .contenido1 h3{
-    font-size: 50PX;
+    font-size: 45PX;
 }
 .contenido1{
-font-size: 35PX;
+font-size: 30PX;
  background: rgba(34,34,34,0.75);
  background-color: rgba(0,0,0,0.8);
+ padding-left: 20px;
 }
-.contenido2 .h3{  font-size: 60PX;
+.contenido2 .h3{  font-size: 35PX;
 }
 .contenido2{
     padding:   60px ;
@@ -80,7 +134,7 @@ font-size: 35PX;
  padding-bottom: 2px;
 }
 .contenido3{
-      padding:   60px ;
+    padding:   60px ;
     font-size: 30PX;
     top: 100%;
      background: rgba(34,34,34,0.75);

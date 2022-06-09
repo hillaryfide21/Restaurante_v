@@ -29,11 +29,11 @@ body{
 .logo{
     width:70px;
     cursor:pointer;
-    padding-left: 100px;
+    padding-left: 20px;
 }
 .login{
-    width: 20%;
-    padding-left: 140px;
+    width: 100px;
+    padding-left: 100px;
 }
 
 .login ul li a{ /*estilo del boton login*/
@@ -43,7 +43,7 @@ body{
 nav ul li { /*menu del centro*/
     display: inline-block;
     list-style:none;/*elimina los bullets*/
-    margin:0px 30px; /*espacio entre objetos*/
+    margin:0px 20px; /*espacio entre objetos*/
     padding-left: 60px;
     padding-right: 50px;
 }
