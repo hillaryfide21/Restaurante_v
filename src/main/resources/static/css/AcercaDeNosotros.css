@@ -30,8 +30,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     padding-left: 20px;
 }
 .login{
-    width: 100px;
-    padding-left: 100px;
+    width: 80px;
+    padding-left: 20px;
 }
 
 .login ul li a{ /*estilo del boton login*/
@@ -41,7 +41,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 nav ul li { /*menu del centro*/
     display: inline-block;
     list-style:none;/*elimina los bullets*/
-    margin:0px 20px; /*espacio entre objetos*/
+    margin:0px 10px; /*espacio entre objetos*/
     padding-left: 60px;
     padding-right: 50px;
 }

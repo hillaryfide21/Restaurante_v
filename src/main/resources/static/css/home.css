@@ -7,6 +7,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Author     : XPC
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+
 .navbar{
     height:10vh;
     width:100%;
@@ -18,13 +20,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     z-index: 2;
 }
 .logo{
-    width:60px;
+    width:70px;
     cursor:pointer;
-    padding-left: 100px;
+    padding-left: 20px;
 }
 .login{
-    width: 20%;
-    padding-left: 140px;
+    width: 80px;
+    padding-left: 20px;
 }
 .login ul li a{ /*estilo del boton login*/
     cursor:pointer;
@@ -35,7 +37,7 @@ div{
 nav ul li { /*menu del centro*/
     display: inline-block;
     list-style:none;/*elimina los bullets*/
-    margin:0px 30px; /*espacio entre objetos*/
+    margin:0px 10px; /*espacio entre objetos*/
     padding-left: 60px;
     padding-right: 50px;
 }
@@ -58,7 +60,9 @@ nav ul li a{
 body{
     margin: 0px;
     background-image: url(../images/general/pizza3.jpg);
+    /*background-image:url(../images.LoginT/wallpaperbetter.com_1920x1080.jpg);*/
     background-attachment: fixed;
+    font-family: 'Joan', serif;
 }/*hasta aqui el navbar*/
 
 .container{
@@ -99,3 +103,8 @@ body{
     z-index: 9;
 }
 
+p{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+}

@@ -6,6 +6,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Created on : Jun 4, 2022, 4:09:37 PM
     Author     : XPC
 */
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
 
 .navbar{
     height:15vh;
@@ -18,13 +19,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     z-index: 2;
 }
 .logo{
-    width:110px;
+    width:70px;
     cursor:pointer;
-    padding-left: 100px;
+    padding-left: 20px;
 }
 .login{
-    width: 20%;
-    padding-left: 140px;
+    width: 80px;
+    padding-left: 20px;
 }
 .login ul li a{ /*estilo del boton login*/
     cursor:pointer;
@@ -35,7 +36,7 @@ div{
 nav ul li { /*menu del centro*/
     display: inline-block;
     list-style:none;/*elimina los bullets*/
-    margin:0px 30px; /*espacio entre objetos*/
+    margin:0px 10px; /*espacio entre objetos*/
     padding-left: 60px;
     padding-right: 50px;
 }
@@ -59,6 +60,7 @@ body{
     margin: 0px;
     background: black;
     background-attachment: fixed;
+    font-family: 'Joan', serif;
     
 }
 
