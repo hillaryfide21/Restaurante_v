@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Contactos</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        
+        <h1 th:text="${titulo}"></h1>
+        <table class="table table-dark table-striped">
+            <thread class="thread-dark">
+                
+                <tr>
+                    <th scoper="col">Nombre</th>
+                    <th scoper="col">Telefono</th>
+                    <th scoper="col">Correo</th>
+                    <th scoper="col">Asunto</th>
+                    <th scoper="col">Mensaje</th>
+                    <th scoper="col">Fecha</th>
+                </tr>
+            </thead>
+                <tbody>
+                <th:block th:each="position : ${contactos}">
+                    <tr>
+                        <td th:text="${position.getNombre_contactenos}"></td>
+                        <td th:text="${position.getTelefono_contactenos}"></td>
+                        <td th:text="${position.getCorreo_contactenos}"></td>
+                        <td th:text="${position.getAsunto_contactenos}"></td>
+                        <td th:text="${position.getMensaje_contactenos}"></td>
+                        <td th:text="${position.getFecha_contactenos}"></td>
+                        <!--
+                        <td>
+                            <a th:href="@{/editContacto/{id} (id=${position.getId_contactenos})}">Edit</a>
+                        </td> 
+                        -->
+                        <td>
+                            <a th:href="@{/deleteContacto/{id} (id=${position.getId_contactenos})}">Borrar</a>
+                        </td>
+                    </tr> 
+                </th:block>
+                </tbody>
+        </table>
+                        
+                        <!--                 probando algo              -->
+        
+
+                        
+    </body>
+</html>
