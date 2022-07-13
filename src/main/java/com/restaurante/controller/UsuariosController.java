@@ -62,7 +62,7 @@ private IRolesService rolesService;
     return "Crear";
             }
     
-      @GetMapping("/delete/{id}")
+      @GetMapping("/deleteusuario/{id}")
     public String eliminarUsuario(@PathVariable("id")long id_usuario){
     usuariosService.delete(id_usuario);
     return "redirect:/usuario";
