@@ -4,11 +4,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
 <html xmlns:th="http://www.thymeleaf.org">
+    
     <!head>
-    <title>Contactos</title>
+    <title>Cupones</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/navbar.css">
 </head>
 <!-- <body style="background: red; background-image: url(pizza3.jpg)"> -->
 <body  style="background: black; height: 150vh;">
@@ -22,39 +22,35 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <thread class="thread-dark">
 
                 <tr>
-                    <th scoper="col">Nombre</th>
-                    <th scoper="col">Telefono</th>
-                    <th scoper="col">Correo</th>
-                    <th scoper="col">Asunto</th>
-                    <th scoper="col">Mensaje</th>
-                    <th scoper="col">Fecha</th>
+                    <th scoper="col">Nombre del cupon</th>
+                    <th scoper="col">Detalle</th>
+                    <th scoper="col">Tipo</th>
                     <th scoper="col">Borrar</th>
                 </tr>
                 </thead>
                 <tbody>
-                <th:block th:each="position : ${contactos}">
+                <th:block th:each="cupon : ${cupones}">
                     <tr>
-                        <td th:text="${position.getNombre_contactenos}"></td>
-                        <td th:text="${position.getTelefono_contactenos}"></td>
-                        <td th:text="${position.getCorreo_contactenos}"></td>
-                        <td th:text="${position.getAsunto_contactenos}"></td>
-                        <td th:text="${position.getMensaje_contactenos}"></td>
-                        <td th:text="${position.getFecha_contactenos}"></td>
-                        <!--
+                        <td th:text="${cupon.getNombre_cupon}"></td>
+                        <td th:text="${cupon.getDetalle_cupon}"></td>
+                        <td th:text="${cupon.getTipo_cupon}"></td>
+                        <!--td>
+                            <a th:href="@{/editPersona/{id} (id=${user.getId})}">Edit</a>
+                        </td-->
                         <td>
-                            <a th:href="@{/editContacto/{id} (id=${position.getId_contactenos})}">Edit</a>
-                        </td> 
-                        -->
-                        <td>
-                            <a th:href="@{/deleteContacto/{id} (id=${position.getId_contactenos})}">Borrar</a>
+                            <a th:href="@{/delete_cupon/{id} (id=${cupon.getId_cupon})}">Borrar</a>
                         </td>
-                    </tr> 
+                    </tr>
                 </th:block>
                 </tbody>
         </table>
         <div style="padding-top: 30px;">
-            <a class="btn btn-success" href="contactenos.html" role="button">Página de contáctenos</a>
+            <a class="btn btn-success" href="cuponnuevo" role="button">Agregar nuevo descuento</a>
         </div>
 </body>
 </html>
+
+
+
+
 

@@ -3,8 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.restaurante.controller;
-import com.restaurante.entity.Puesto;
-import com.restaurante.service.IPuestoService;
+
+import com.restaurante.entity.Cupon;
+import com.restaurante.service.ICuponService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,39 +14,38 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
 /**
  *
  * @author Hillary
  */
 @Controller
-public class PuestoController {
+public class CuponController {
     @Autowired
-    private IPuestoService puestoService;
+    private ICuponService cuponService;
 
-    //Trae los puestos disponibles para mostrarlos en una tabla de administración
-    @GetMapping("/puesto")
+    //Trae los cupones disponibles para mostrarlos en una tabla de administración
+    @GetMapping("/cupon")
     public String index(Model model) {
-        List<Puesto> listaPuesto = puestoService.getAllPuesto();
-        model.addAttribute("titulo", "Puestos Disponibles");
-        model.addAttribute("puestos", listaPuesto);
-        return "puestos";
+        List<Cupon> listaCupon = cuponService.getAllCupon();
+        model.addAttribute("titulo", "Descuentos Disponibles");
+        model.addAttribute("cupones", listaCupon);
+        return "cupones";
     }
     
-    //Permite al usuario agregar un nuevo puesto 
-    @GetMapping("/puestonuevo")
-    public String crearPuesto(Model model) {
-        model.addAttribute("puesto", new Puesto());
-        return "crearPuesto";
+    //Permite al usuario agregar un nuevo cupon 
+    @GetMapping("/cuponnuevo")
+    public String crearCupon(Model model) {
+        model.addAttribute("cupon", new Cupon());
+        return "crearCupon";
     }
     
-   @PostMapping("/savePuesto") 
-    public String guardarPuesto (@ModelAttribute Puesto puesto){ 
-        puestoService.savePuesto(puesto);
-        return "redirect:/puesto";
+   @PostMapping("/saveCupon") 
+    public String guardarCupon (@ModelAttribute Cupon cupon){ 
+        cuponService.saveCupon(cupon);
+        return "redirect:/cupon";
     }
     
-    /*@GetMapping("/editPuesto/{id}")
+   /* @GetMapping("/editPuesto/{id}")
     public String editarProducto (@PathVariable("id") Long idProducto, Model model){ //permite pasar variable al html
         Producto producto = productoService.getProductoById(idProducto);
         List<Tienda> listaTiendas = tiendaService.listStore();
@@ -56,9 +56,11 @@ public class PuestoController {
     
     
     
-    @GetMapping("/delete/{id}") //url como se comunica controller con servicio
-    public String borrarPuesto (@PathVariable("id") Long idPuesto){ //permite pasar variable al html
-        puestoService.delete(idPuesto);
-        return "redirect:/puesto";
+    @GetMapping("/delete_cupon/{id}") //url como se comunica controller con servicio
+    public String borrarCupon (@PathVariable("id") Long idCupon){ //permite pasar variable al html
+        cuponService.delete(idCupon);
+        return "redirect:/cupon";
     }
 }
+
+ 

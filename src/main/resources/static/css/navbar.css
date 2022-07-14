@@ -1,0 +1,14 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jul 13, 2022, 11:50:10 PM
+    Author     : Hillary
+*/
+
+nav ul li { /*menu del centro*/
+    margin:0px 10px; /*espacio entre objetos*/
+    padding-left: 60px;
+    padding-right: 50px;
+}
