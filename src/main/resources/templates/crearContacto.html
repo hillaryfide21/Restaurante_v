@@ -13,7 +13,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <body>
 
         <header th:replace="plantilla/template::header"></header>
-        <h1>Agregar contacto</h1>
+        <h1 th:text="#{titulo.nuevocontacto}"></h1>
         <div class="container">
             <div class "card-header bg-black text-white"> </div>
             <div class="card-body"> 
@@ -27,38 +27,39 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                         <input type = "hidden" th:field="*{id_contactenos}">
                         <div class="form-group mb-3 row">
-                            <label class="col-md-2 col-form-label" for="nombre">Nombre</label>
+                            <label class="col-md-2 col-form-label" for="nombre" th:text="#{nombre}"></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{nombre_contactenos}" placeholder="Nombre">
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{nombre_contactenos}"  th:attr="placeholder=#{nombre}">
                             </div>
 
-                            <label class="col-md-2 col-form-label" for="telefono">Telefono</label>
+                            <label class="col-md-2 col-form-label" for="telefono" th:text="#{telefono}"></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{telefono_contactenos}" placeholder="Telefono">
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{telefono_contactenos}" th:attr="placeholder=#{telefono}">
                             </div>
 
-                            <label class="col-md-2 col-form-label" for="correo">Correo</label>
+                            <label class="col-md-2 col-form-label" for="correo" th:text="#{correo}"></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{correo_contactenos}" placeholder="Correo" >
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{correo_contactenos}" th:attr="placeholder=#{correo}">
                             </div>
 
-                            <label class="col-md-2 col-form-label" for="asunto">Asunto</label>
+                            <label class="col-md-2 col-form-label" for="asunto" th:text="#{asunto}"></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{asunto_contactenos}" placeholder="Asunto">
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{asunto_contactenos}" th:attr="placeholder=#{asunto}">
                             </div>
 
-                            <label class="col-md-2 col-form-label" for="mensaje">Mensaje</label>
+                            <label class="col-md-2 col-form-label" for="mensaje" th:text="#{mensaje}"></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{mensaje_contactenos}" placeholder="Mensaje">
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{mensaje_contactenos}" th:attr="placeholder=#{mensaje}">
                             </div>
 
-                            <label class="col-md-2 col-form-label" for="fecha">Fecha</label>
+                            <label class="col-md-2 col-form-label" for="fecha"  th:text="#{fecha}"></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{fecha_contactenos}" placeholder="Fecha">
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{fecha_contactenos}" th:attr="placeholder=#{nombre}">
                             </div>
 
 
-                            <button type="submit" class="btn btn-primary" value="Guardar">Submit</button>
+                            <input type="submit" class="btn btn-primary" value="Guardar" th:value="#{botonenviar}">
+                           
                         </div>
                     </form>
 

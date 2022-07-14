@@ -6,7 +6,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 <html xmlns:th="http://www.thymeleaf.org">
     
     <head>
-        <title>Unete a nuestro equipo</title>
+        <title>Nuevo descuento</title>
         <link rel="stylesheet" href="css/forms.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"> 
@@ -24,21 +24,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <input type = "hidden" th:field="*{id_cupon}">
                 
                 
-                <h1> Descuentos </h1>
-                <h2> Inserte los nuevos descuentos </h2>
+                <h1 th:text="#{titulo.descuentos}"> </h1>
+                <h2 th:text="#{insert.discounts}"></h2> 
                 <div class="txt_field">
                     <input type="text" required th:field="*{nombre_cupon}">
-                    <label>Nombre del descuento</label>
+                    <label  th:text="#{descuento.nombre}"></label>
                 </div>
                 <div class="txt_field">
                     <input type="text" required th:field="*{detalle_cupon}">
-                    <label>Descripción del descuento</label>
+                    <label  th:text="#{descuento.descripcion}"></label>
                 </div>
                 <div class="txt_field">
                     <input type="text" required th:field="*{tipo_cupon}">
-                    <label>Tipo de descuento</label>
+                    <label th:text="#{descuento.tipo}"></label>
                 </div>
-                <input type="submit" value="Guardar">
+                <input type="submit" th:value="#{botonenviar}">
             </form>
         </div>    
     </body>

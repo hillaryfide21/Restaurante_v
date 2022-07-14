@@ -16,15 +16,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
     <div style="padding: 50px;">
 
-        <h1 style="padding-bottom: 50px; color: white;" th:text="${titulo}"></h1>
+        <h1 style="padding-bottom: 50px; color: white;" th:text="#{descuentosdisponibles}"></h1>
 
         <table  class="table table-dark table-striped">
             <thread class="thread-dark">
 
                 <tr>
-                    <th scoper="col">Nombre del cupon</th>
-                    <th scoper="col">Detalle</th>
-                    <th scoper="col">Tipo</th>
+                    <th scoper="col" th:text="#{descuentosdisponibles}"></th>
+                    <th scoper="col" th:text="#{cupon.detalle}"></th>
+                    <th scoper="col" th:text="#{cupon.tipo}"></th>
                     <th scoper="col">Borrar</th>
                 </tr>
                 </thead>
@@ -45,7 +45,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </tbody>
         </table>
         <div style="padding-top: 30px;">
-            <a class="btn btn-success" href="cuponnuevo" role="button">Agregar nuevo descuento</a>
+            <a href="/cuponnuevo">  
+                <input type="submit" class="btn btn-primary" value="Guardar" th:value="#{btn.nuevocupon}">
+            </a>
         </div>
 </body>
 </html>

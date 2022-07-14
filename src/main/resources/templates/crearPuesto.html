@@ -13,7 +13,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         </head>
         <body>
             <header th:replace="plantilla/template::header"></header>
-            <h1>Agregar puesto</h1>
+            <h1 th:text="#{agregarpuesto}"></h1>
             <div class="container">
                 <div class "card-header bg-black text-white"> </div>
                 <div class="card-body"> 
@@ -27,22 +27,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                             <input type = "hidden" th:field="*{id_puesto}">
                             <div class="form-group mb-3 row">
-                                <label class="col-md-2 col-form-label" for="nombre">Nombre del puesto</label>
+                                <label class="col-md-2 col-form-label" for="nombre" th:text="#{puesto.nombre}"></label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm col-md-6" th:field="*{nombre_puesto}" placeholder="Nombre">
+                                    <input type="text" class="form-control form-control-sm col-md-6" th:field="*{nombre_puesto}" th:attr="placeholder=#{nombre}">
                                 </div>
 
-                                <label class="col-md-2 col-form-label" for="nombre">Detalles</label>
+                                <label class="col-md-2 col-form-label" for="nombre" th:text="#{cupon.detalle}"></label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm col-md-6" th:field="*{detalle_puesto}" placeholder="Detalles">
+                                    <input type="text" class="form-control form-control-sm col-md-6" th:field="*{detalle_puesto}" th:attr="placeholder=#{cupon.detalle}">
                                 </div>
 
-                                <label class="col-md-2 col-form-label" for="nombre">Requisitos</label>
+                                <label class="col-md-2 col-form-label" for="nombre" th:text="#{requisito}"></label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm col-md-6" th:field="*{requisito_puesto}" placeholder="Requisitos">
+                                    <input type="text" class="form-control form-control-sm col-md-6" th:field="*{requisito_puesto}" th:attr="placeholder=#{requisito}">
                                 </div>
 
-                                <button type="submit" class="btn btn-primary" value="Guardar">Submit</button>
+                                <input type="submit" class="btn btn-primary" value="Guardar" th:value="#{botonenviar}">
                             </div>
                         </form>
 
