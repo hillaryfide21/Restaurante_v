@@ -3,20 +3,22 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<html>
+
+<html xmlns:th= "http://www.thymeleaf.org">
     <head>
         <title>Menu</title>
         <link rel="stylesheet" href="css/menu_1.css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     </head>
     <body>
+        <header th:replace="templates/plantilla/template::header"></header>
         <div class="container">
             <div class="navbar">
                 <a href="home.html"><img src="images/navbar/pizza.png" class='logo' alt="alt"/></a>
-                
+
                 <nav> 
                     <ul>
-                       
+
                         <li><a href="menu_1.html">Menú</a></li>
                         <li><a href="restaurantes.html">Restaurantes</a></li>
                         <li><a href="AcercaDeNosotros.html">Acerca de nosotros</a></li>
@@ -96,7 +98,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <li>
                             <a href="index.html">
                                 <div class="producto">
-                                  
+
                                     <img src="images.pizzas/pizza5.png" class="imagen" alt=""/>
                                     <div class="texto">
                                         <div class="titulos">
@@ -108,10 +110,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                 </div>
                             </a></li>
 
-                                                    <li>
+                        <li>
                             <a href="index.html">
                                 <div class="producto">
-                                    
+
                                     <img src="images.pizzas/pizza6.jpg" class="imagen" alt=""/>
                                     <div class="texto">
                                         <div class="titulos">
@@ -139,8 +141,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             </a>
                         </li>
 
-                        
-                            
+
+
                     </ul>
 
                 </div>
