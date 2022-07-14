@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Informacion</title>
+        <link rel="stylesheet" href="css/restaurantes.css"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    </head>
+
+    <body>
+        
+        <div class="container">
+            <div class="navbar">
+                <a href="home.html"><img src="images/navbar/pizza.png" class='logo' alt="alt"/></a>
+                
+                <nav> 
+                    <ul>
+                       
+                        <li><a href="menu_1.html">Menu</a></li>
+                        <li><a href="restaurantes.html">Restaurantes</a></li>
+                        <li><a href="AcercaDeNosotros.html">Acerca de nosotros</a></li>
+                        <li><a href="contactenos.html">Contactenos</a></li>
+                        <li><a href="CV.html">Trabaja con nosotros</a></li>
+                    </ul>
+                </nav>
+                <nav class="login">
+                    <ul>
+                        <li><a href="loginT.html">Login</a></li>
+                    </ul>
+                </nav>
+            </div> <!<!-- div navbar --> 
+            
+            
+            
+            <h1 th:text="${titulo}" ></h1>
+
+            <div class="lugares">
+                <th:block th:each="user : ${restaurantes}">
+                    <div class="lugar">
+                        <img src="images.restaurantes/pin-de-ubicacion.png" class="pin" alt="Este es un icono de pin"/>
+                        <div class="texto">
+
+                            <h4 th:text="${user.getRestaurante}"></h4>
+                            <p th:text= "${user.getDireccion_restaurante}"></p>
+
+                        </div>
+                        <img src="images.restaurantes/right-arrow (1).png" class="flecha" alt="Este es un icono para avanzar"/>
+                    </div>
+                </th:block>
+            </div>
+        </div>
+    </body>
+</html>
