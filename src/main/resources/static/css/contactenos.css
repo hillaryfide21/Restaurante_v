@@ -9,7 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 @import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
 
 .navbar{
-    height:15vh;
+    height:10vh;
     width:100%;
     display:flex; /*como se va alinear dentro caja - */
     align-items: center;
