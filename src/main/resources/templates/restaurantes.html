@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Menu</title>
-        <link rel="stylesheet" href="css/menu.css"/>
+        <title>Informacion</title>
+        <link rel="stylesheet" href="css/restaurantes.css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
     </head>
+
     <body>
+        
         <div class="container">
             <div class="navbar">
                 <a href="home.html"><img src="images/navbar/pizza.png" class='logo' alt="alt"/></a>
@@ -30,22 +29,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </ul>
                 </nav>
             </div> <!<!-- div navbar --> 
-
-            <h1>Nuestro Menú</h1>
             
-            <div class="lista">
-                <ul class="categorias">
-                    <li><a>Entradas</a></li>
-                    <li><a>Ensaladas</a></li>
-                    <li><a href="menu_1.html">Pizzas</a></li>
-                    <li><a>Pastas</a></li>
-                    <li><a>Bebidas</a></li>
-                    <li><a>Cocteles</a></li>
-                    <li><a>Cervezas</a></li>
-                    <li><a>Vinos</a></li>
-                    <li><a>Postres</a></li>
-                </ul>
+            
+            
+            <h1 th:text="${titulo}" ></h1>
 
+            <div class="lugares">
+                <th:block th:each="user : ${restaurantes}">
+                    <div class="lugar">
+                        <img src="images.restaurantes/pin-de-ubicacion.png" class="pin" alt="Este es un icono de pin"/>
+                        <div class="texto">
+
+                            <h4 th:text="${user.getRestaurante}"></h4>
+                            <p th:text= "${user.getDireccion_restaurante}"></p>
+
+                        </div>
+                        <img src="images.restaurantes/right-arrow (1).png" class="flecha" alt="Este es un icono para avanzar"/>
+                    </div>
+                </th:block>
             </div>
         </div>
     </body>

@@ -9,8 +9,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 @import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
 *{
     margin: 0;
-    padding:0;
-    box-sizing: border-box;
     font-family: 'Joan', serif;
 }
 .navbar{
@@ -25,7 +23,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 .logo{
-    width:80px;
+    width:70px;
     cursor:pointer;
     padding-left: 20px;
 }
