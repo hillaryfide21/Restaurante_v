@@ -70,7 +70,7 @@ public class Usuarios implements Serializable {
         this.apellido2_usuario = apellido2_usuario;
     }
 
-    public String getDirección_usuario() {
+    public String getDireccion_usuario() {
         return dirección_usuario;
     }
 

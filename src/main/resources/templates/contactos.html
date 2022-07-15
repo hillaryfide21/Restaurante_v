@@ -35,11 +35,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <th:block th:each="position : ${contactos}">
                     <tr>
                         <td th:text="${position.getNombre_contactenos}"></td>
-                        <td th:text="${position.getTelefono_contactenos}"></td>
                         <td th:text="${position.getCorreo_contactenos}"></td>
                         <td th:text="${position.getAsunto_contactenos}"></td>
                         <td th:text="${position.getMensaje_contactenos}"></td>
                         <td th:text="${position.getFecha_contactenos}"></td>
+                        <td th:text="${position.getTelefono_contactenos}"></td>
                         <!--
                         <td>
                             <a th:href="@{/editContacto/{id} (id=${position.getId_contactenos})}">Edit</a>
@@ -54,7 +54,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         </table>
         <div style="padding-top: 30px;">
             <a href="/contactonuevo">  
-                <input type="submit" class="btn btn-primary" value="Guardar" th:value="#{btn.nuevocontacto}">
+                <input type="submit" class="btn btn-success" value="Guardar" th:value="#{btn.nuevocontacto}">
             </a>
         </div>
 </body>
