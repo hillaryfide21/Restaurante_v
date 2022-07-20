@@ -71,7 +71,7 @@ h1{
     position: absolute;
     top: 130px;
     left: 50%;
-    transform: translate(-45%);
+    transform: translate(-50%);
     text-align: center;
     color: white;
 }
@@ -104,6 +104,16 @@ h1{
     color: white;
     /*border-bottom: 1px solid #336124;*/
 
+}
+
+.lista ul li a{
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+    color: white;
 }
 
 .otro{
@@ -147,24 +157,29 @@ h1{
     position: relative;
     background-color: whitesmoke;
     width: 700px;
-    height: 180px;
+    height: 170px;
     padding: 50px;
+    padding-top: 25px;
     border-radius: 10px;
     box-sizing: border-box;
     margin: auto;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    cursor: auto;
     box-shadow: 10px 10px 15px rgba(0,0,0,0.05); /*para hacer un sombreado a la caja*/
     color: black;
-    padding-right: 30px;
+    padding-right: 20px;
 }
 
 .imagen{
     height: 120px;
-    width: 130px;
+    width: 120px;
+    min-height: 120px;
+    min-width: 120px;
+    object-fit: cover;
     border-radius: 10px;
     margin-left: -25px;
+    margin-top: 25px;
 }
 
 h4{
@@ -173,17 +188,47 @@ h4{
 
 .titulos{
     display:flex; /*como se va alinear dentro caja - */
-    align-items: center;
     margin-bottom: 15px;
-    margin-right: 0;
+    
+}
 
+.cabecera{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 550px;
+}
+
+p{
+    position: absolute;
+    margin-right: 50px;
+    margin-top: -24px;
+    width: 430px;
 }
 
 .texto{
     margin-left: 40px;
+    margin-top: 25px;
+    height: 120px;
 }
 
 h5{
+    position: absolute;
     font-size: 20px;
-    margin-left: 315px;
+    margin-left: 450px;
+}
+
+.btn_agregar{
+    margin-left: 448px;
+    padding: 0;
+    border: none;
+    box-sizing: content-box;
+    align-items: center;
+    background: none;
+}
+
+.icono-agregar{
+    height: 35px;
+    cursor:pointer;
+    padding: 0px;
 }
