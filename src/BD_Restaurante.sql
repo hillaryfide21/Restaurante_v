@@ -41,15 +41,42 @@ CREATE TABLE `solicitudes` (
    CONSTRAINT `fk_solicitud_puestos` FOREIGN KEY (`id_puesto`) REFERENCES `puestos` (`id_puesto`) ON DELETE NO ACTION ON UPDATE NO ACTION
  );
   
-  CREATE TABLE `menu` (
-  `id_producto` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre_producto` varchar(50) NOT NULL,
-  `detalle_producto` varchar(500) NOT NULL,
-  `categoria_producto` varchar(500) NOT NULL,
-  `precio_producto` int NOT NULL,
-  PRIMARY KEY (`id_producto`)
-) ;
+CREATE TABLE CATEGORIAS(
+	id_categoria int not null auto_increment,
+	primary key(id_categoria),
+	nombre_categoria varchar(50));
 
+/*CATEGORIAS*/
+insert into categorias values (1, 'Entradas', 'entradas');
+insert into categorias values (2, 'Ensaladas', 'ensaladas');
+insert into categorias values (3, 'Pizzas', 'pizzas');
+insert into categorias values (4, 'Pastas', 'pastas');
+insert into categorias values (5, 'Bebidas', 'bebidas');
+
+CREATE TABLE MENU(
+	id_producto int not null auto_increment,
+	primary key (id_producto),
+	nombre_producto varchar(100),
+	detalle_producto varchar(200),
+	precio_producto int,
+	id_categoria int not null,
+	imagen_producto varchar(100),
+	CONSTRAINT `fk_menu_categorias` FOREIGN KEY (`id_categoria`) REFERENCES
+	`categorias` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION);
+ 
+/*PRODUCTOS*/
+insert into menu values (1, 'Pizza Nórdica', 'Deliciosa pizza con base de crema, salmon, 
+cebolla cruda, alcaparras, cebollino y un toque de salsa de aguacate de la casa', 10, 3, 'pizza-nordica.jpg');
+
+insert into menu values (2, 'Pizza Veggie', 'Deliciosa pizza con chile, tomate, 
+cebolla y aceitunas', 12, 3, 'pizza-veggie.jpg');
+
+insert into menu values (3, 'Pizza Capresse', 'Deliciosa pizza con tomate, 
+orégano y albahaca', 9, 3, 'pizza-capresse.jpg');
+
+insert into menu values (4, 'Ensalada Cesar', 'Deliciosa ensalada de espinacas, cebolla
+morada y pollo', '6', 2, '');
+    
   CREATE TABLE `cupones` (
   `id_cupon` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_cupon` varchar(50) NOT NULL,
@@ -87,8 +114,6 @@ CREATE TABLE `restaurantes` (
   `correo_restaurante` varchar(100),
   PRIMARY KEY (`id_restaurante`)
 );
-
-
 
 insert into restaurantes values (1, 'Restaurante Paseo Colon', 'Frente al Hotel 
 Ambasador sobre el Paseo Colon, Calle 28, San Jose', '+506 2220-2530', '10:00am-9:00pm',
