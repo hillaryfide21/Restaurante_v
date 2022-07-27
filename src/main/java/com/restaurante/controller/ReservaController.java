@@ -168,16 +168,16 @@ public class ReservaController {
     public String index(Model model) {
         List<Reservas> listReservas = reservaService.getAllReservas();
         model.addAttribute("titulo", "Tabla de Reservas");
-        model.addAttribute("restaurantes", listReservas);
-        return "restaurantes";
+        model.addAttribute("reservas", listReservas);
+        return "reservas";
     }
 
     @GetMapping("/reservaN")
     public String CrearReserva(Model model) {
         List<Restaurantes> ListRestaurantes = restauranteService.getAllData();
-        model.addAttribute("reservas", new Reservas());
-        model.addAttribute("restaurante", ListRestaurantes);
-        return "CrearReserva";
+        model.addAttribute("reserva", new Reservas());
+        model.addAttribute("restaurantes", ListRestaurantes);
+        return "crearReserva";
     }
 
     @PostMapping("/saveReserva")
@@ -190,15 +190,15 @@ public class ReservaController {
     public String editarReserva(@PathVariable("id") long id_reserva, Model model) {
         Reservas reservas = reservaService.getReservaByid_usuario(id_reserva);
         List<Restaurantes> listRol = restauranteService.getAllData();
-        model.addAttribute("reservas", reservas);
+        model.addAttribute("reserva", reservas);
         model.addAttribute("restaurantes", listRol);
-        return "Crear";
+        return "crearReserva";
     }
 
     @GetMapping("/deleteReserva/{id}")
     public String eliminarUsuario(@PathVariable("id") long id_usuario) {
         reservaService.delete(id_usuario);
-        return "redirect:/usuario";
+        return "redirect:/reservas";
 
     }
 }

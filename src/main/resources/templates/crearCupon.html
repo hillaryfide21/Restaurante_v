@@ -4,7 +4,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
 <html xmlns:th="http://www.thymeleaf.org">
-    
+
     <head>
         <title>Nuevo descuento</title>
         <link rel="stylesheet" href="css/forms.css">
@@ -15,30 +15,34 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
     <body>
         <header th:replace="plantilla/template::header"></header>
-        
+
         <div class='center'>
             <form th:object="${cupon}"
-                              th:action="@{/saveCupon}"
-                              method="POST">
-                
+                  th:action="@{/saveCupon}"
+                  method="POST">
+
                 <input type = "hidden" th:field="*{id_cupon}">
-                
-                
+
+
                 <h1 th:text="#{titulo.descuentos}"> </h1>
                 <h2 th:text="#{insert.discounts}"></h2> 
+                
                 <div class="txt_field">
                     <input type="text" required th:field="*{nombre_cupon}">
                     <label  th:text="#{descuento.nombre}"></label>
                 </div>
+                
                 <div class="txt_field">
                     <input type="text" required th:field="*{detalle_cupon}">
                     <label  th:text="#{descuento.descripcion}"></label>
                 </div>
+                
                 <div class="txt_field">
                     <input type="text" required th:field="*{tipo_cupon}">
                     <label th:text="#{descuento.tipo}"></label>
                 </div>
                 <input type="submit" th:value="#{botonenviar}">
+                
             </form>
         </div>    
     </body>

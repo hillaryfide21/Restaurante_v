@@ -25,7 +25,9 @@ public class Reservas implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id_reserva;
     /*pk*/
-    private String fecha_reserva;
+    private String dia_reserva;
+    private int cantidad_reserva;
+    private String hora_reserva;
     private String nombre_reserva;
     private String telefono_reserva;;
     
@@ -41,14 +43,6 @@ public class Reservas implements Serializable {
 
     public void setId_reserva(long id_reserva) {
         this.id_reserva = id_reserva;
-    }
-
-    public String getFecha_reserva() {
-        return fecha_reserva;
-    }
-
-    public void setFecha_reserva(String fecha_reserva) {
-        this.fecha_reserva = fecha_reserva;
     }
 
     public String getNombre_reserva() {
@@ -74,5 +68,28 @@ public class Reservas implements Serializable {
     public void setId_restaurante(Restaurantes id_restaurante) {
         this.id_restaurante = id_restaurante;
     }
+    public String getDia_reserva() {
+        return dia_reserva;
+    }
 
+    public void setDia_reserva(String dia_reserva) {
+        this.dia_reserva = dia_reserva;
+    }
+
+    public String getHora_reserva() {
+        return hora_reserva;
+    }
+
+    public void setHora_reserva(String hora_reserva) {
+        this.hora_reserva = hora_reserva;
+    }
+
+    public int getCantidad_reserva() {
+        return cantidad_reserva;
+    }
+
+    public void setCantidad_reserva(int cantidad_reserva) {
+        this.cantidad_reserva = cantidad_reserva;
+    }
+    
 }

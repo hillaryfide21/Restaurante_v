@@ -131,10 +131,11 @@ Los Anonos, Carretera vieja Escazu', '+506 2220-2735', '10:00am-9:00pm',
 
   CREATE TABLE `reservas` (
   `id_reserva` int(11) NOT NULL AUTO_INCREMENT,
-  `fecha_reserva` datetime,
+  `dia_reserva` varchar(50),
+  `hora_reserva` varchar(50),
   `nombre_reserva` varchar(100) NOT NULL,
+  `cantidad_reserva` int(10),
   `telefono_reserva` varchar(50),
-  `detalle_reserva` varchar(50),
   `id_restaurante` int(11) NOT NULL,
   PRIMARY KEY (`id_reserva`),
   CONSTRAINT `fk_reserva_restaurante` FOREIGN KEY (`id_restaurante`) REFERENCES `restaurantes` (`id_restaurante`) ON DELETE NO ACTION ON UPDATE NO ACTION
