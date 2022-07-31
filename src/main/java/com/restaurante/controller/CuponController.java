@@ -61,6 +61,15 @@ public class CuponController {
         cuponService.delete(idCupon);
         return "redirect:/cupon";
     }
+    
+    //Cupones que ve el usuario
+    @GetMapping("/cuponesuser")
+    public String traerCupones(Model model) {
+        List<Cupon> listaCupon = cuponService.getAllCupon();
+        model.addAttribute("titulo", "Descuentos Disponibles");
+        model.addAttribute("cupones", listaCupon);
+        return "cuponesuser";
+    }
 }
 
  

@@ -29,9 +29,18 @@ public class Cupon implements Serializable{
     private String nombre_cupon;
     private String detalle_cupon;
     private String tipo_cupon;
+    private String imagen;
 
     public long getId_cupon() {
         return id_cupon;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     public void setId_cupon(long id_cupon) {
