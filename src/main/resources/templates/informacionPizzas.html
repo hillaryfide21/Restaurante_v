@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="css/menu_1.css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <script>
-            
+
         </script>
 
     </head>
@@ -43,25 +43,27 @@
                     <ul>
                         <th:block th:each="user : ${pizzas}">
                             <li>
-                                <div class="producto">
+                                <form  th:action="@{/carrito}" method="POST">
+                                    <div class="producto">
+                                        <input type="hidden" th:value="${user.getId_producto}" th:name="id_producto" id="id_producto">
+                                        <img th:src="@{/images.pizzas/{cod} (cod=${user.getImagen_producto})}" class="imagen" alt="alt"/>
 
-                                    <img th:src="@{/images.pizzas/{cod} (cod=${user.getImagen_producto})}" class="imagen" alt="alt"/>
-
-                                    <div class="texto">
-                                        <div class="titulos">
-                                            <h4 th:text="${user.getNombre_producto}"></h4>
-                                            <h5 th:text="'$' + ${user.getPrecio_producto}"></h5>
-                                        </div>
-                                        <div class="cabecera">
-                                            <div class="desc">
-                                                <p th:text= "${user.getDetalle_producto}"></p>
+                                        <div class="texto">
+                                            <div class="titulos">
+                                                <h4 th:text="${user.getNombre_producto}"></h4>
+                                                <h5 th:text="'$' + ${user.getPrecio_producto}"></h5>
                                             </div>
-                                            <div class='boton'>
-                                                <button type="submit" class="btn_agregar"><img src="images.pizzas/boton-agregar.png" class="icono-agregar" alt="alt"/></button>
+                                            <div class="cabecera">
+                                                <div class="desc">
+                                                    <p th:text= "${user.getDetalle_producto}"></p>
+                                                </div>
+                                                <div class='boton'>
+                                                    <button type="submit" class="btn_agregar"><img src="images.pizzas/boton-agregar.png" class="icono-agregar" alt="alt"/></button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                                 <!-- </a> -->
                         </th:block>
                         </li>

@@ -76,6 +76,19 @@ orégano y albahaca', 9, 3, 'pizza-capresse.jpg');
 
 insert into menu values (4, 'Ensalada Cesar', 'Deliciosa ensalada de espinacas, cebolla
 morada y pollo', '6', 2, '');
+
+create table orden(
+id int primary key,
+numero varchar(100),
+fechaCreacion date,
+fechaRecibida date);
+
+create table detalles(
+id int primary key,
+nombre varchar(100),
+cantidad double,
+precio double,
+total double);
     
   CREATE TABLE `cupones` (
   `id_cupon` int(11) NOT NULL AUTO_INCREMENT,
