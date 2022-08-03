@@ -75,20 +75,32 @@ insert into menu values (3, 'Pizza Capresse', 'Deliciosa pizza con tomate,
 orégano y albahaca', 9, 3, 'pizza-capresse.jpg');
 
 insert into menu values (4, 'Ensalada Cesar', 'Deliciosa ensalada de espinacas, cebolla
-morada y pollo', '6', 2, '');
+morada y pollo', '6', 2, 'ensalada-cesar.jpg');
 
-create table orden(
-id int primary key,
-numero varchar(100),
-fechaCreacion date,
-fechaRecibida date);
+CREATE TABLE `ordenes` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `numero` varchar(100) DEFAULT NULL,
+  `total` double NOT NULL,
+  `usuario_id_usuario` bigint DEFAULT NULL,
+  `fecha_creacion` datetime DEFAULT NULL,
+  `fecha_recibida` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
 
-create table detalles(
-id int primary key,
-nombre varchar(100),
-cantidad double,
-precio double,
-total double);
+
+CREATE TABLE `detalles` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) DEFAULT NULL,
+  `cantidad` double DEFAULT NULL,
+  `precio` double DEFAULT NULL,
+  `total` double DEFAULT NULL,
+  `orden_id` int DEFAULT NULL,
+  `id_producto_id_producto` bigint DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_orden_detalles_idx` (`orden_id`),
+  CONSTRAINT `fk_orden_detalles` FOREIGN KEY (`orden_id`) REFERENCES `ordenes` (`id`)
+);
+
     
   CREATE TABLE `cupones` (
   `id_cupon` int(11) NOT NULL AUTO_INCREMENT,

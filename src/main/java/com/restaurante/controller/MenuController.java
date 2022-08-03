@@ -5,8 +5,11 @@ import com.restaurante.entity.DetalleOrden;
 import com.restaurante.entity.Menu;
 import com.restaurante.entity.Orden;
 import com.restaurante.service.ICategoriasService;
+import com.restaurante.service.IDetalleOrdenService;
 import com.restaurante.service.IMenuService;
+import com.restaurante.service.IOrdenService;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -22,13 +25,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MenuController {
 
-    private final Logger log = LoggerFactory.getLogger(MenuController.class);
+    //private final Logger log = LoggerFactory.getLogger(MenuController.class);
 
     @Autowired
     private ICategoriasService categoriasService;
 
     @Autowired
     private IMenuService menuService;
+
+    @Autowired
+    private IOrdenService ordenService;
+
+    @Autowired
+    private IDetalleOrdenService detalleOrdenService;
 
     //Para almacenar los detalles de la orden
     List<DetalleOrden> detalles = new ArrayList<>();
@@ -77,13 +86,16 @@ public class MenuController {
         DetalleOrden detalleOrden = new DetalleOrden();
         Menu producto = new Menu();
         double sumaTotal = 0;
+        double cantidad = detalleOrden.getCantidad();
+        
+        List<DetalleOrden> ordenesNueva = new ArrayList<>();
 
         Optional<Menu> optionalProducto = menuService.getDataById(id);
-        log.info("Producto añadido: {}", optionalProducto.get());
+        //log.info("Producto añadido: {}", optionalProducto.get());
         //log.info("Cantidad: {}", cantidad);
         producto = optionalProducto.get();
 
-        detalleOrden.setCantidad(1);
+        detalleOrden.setCantidad(cantidad+1);
         detalleOrden.setPrecio(Integer.valueOf(producto.getPrecio_producto()));
         detalleOrden.setNombre(producto.getNombre_producto());
         detalleOrden.setTotal(Integer.valueOf(producto.getPrecio_producto()) * detalleOrden.getCantidad());
@@ -95,8 +107,19 @@ public class MenuController {
 
         if (!ingresado) {
             detalles.add(detalleOrden);
+        } else if (ingresado) {
+            for (DetalleOrden detalle : detalles) {
+                if (detalle.getId_producto().getId_producto() == Id_producto) {
+                    detalle.setCantidad((detalle.getCantidad()+1));
+                    detalle.setTotal(Integer.valueOf(producto.getPrecio_producto()) * detalle.getCantidad());
+                    ordenesNueva.add(detalle);
+                } else if (detalle.getId_producto().getId_producto() != Id_producto){
+                    ordenesNueva.add(detalle);
+                }
+            }
+            detalles = ordenesNueva;
         }
-
+        
         sumaTotal = detalles.stream().mapToDouble(dt -> dt.getTotal()).sum();
 
         orden.setTotal(sumaTotal);
@@ -129,7 +152,7 @@ public class MenuController {
         model.addAttribute("cart", detalles);
         model.addAttribute("orden", orden);
 
-        return "carrito";
+        return "redirect:/getCarrito";
     }
 
     @GetMapping("/getCarrito")
@@ -146,11 +169,39 @@ public class MenuController {
 
         //Se trae después según la sesión
         //Usuario usuario = usuarioService.findById(Long.valueOf(1)).get();
-
+        
         model.addAttribute("cart", detalles);
         model.addAttribute("orden", orden);
         //model.addAttribute("usuario", usuario);
 
         return "resumenOrden";
     }
+
+    //Guardar la orden
+    @GetMapping("/saveOrden")
+    public String saveOrden() {
+        Date fechaCreacion = new Date();
+        orden.setFechaCreacion(fechaCreacion);
+        orden.setNumero(ordenService.generarNumeroOrden());
+
+        //usuario
+        /*Usuario usuario = usuarioService.findById(Long.valueOf(1)).get();
+        
+        //Guardar orden
+        orden.setUsuario(usuario);*/
+        ordenService.save(orden);
+
+        //Guardar detalles
+        for (DetalleOrden dt : detalles) {
+            dt.setOrden(orden);
+            detalleOrdenService.save(dt);
+        }
+
+        //Limpiar orden y detalles
+        orden = new Orden();
+        detalles.clear();
+
+        return "redirect:/menu";
+    }
+
 }

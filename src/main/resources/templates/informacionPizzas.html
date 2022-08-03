@@ -4,10 +4,6 @@
         <title>Pizzas</title>
         <link rel="stylesheet" href="css/menu_1.css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <script>
-
-        </script>
-
     </head>
 
     <body>
@@ -33,7 +29,7 @@
 
             <h1 th:text="${titulo}" ></h1>
             <div class="lista">
-                <ul class="categorias"> <!--th:href="@{/editPersona/{id}(id=${user.getId})}"-->
+                <ul class="categorias">
                     <th:block th:each="user : ${categorias}">
                         <li><a th:text="${user.getNombre_categoria}" th:href="@{/{cat} (cat=${user.getReferencia_categoria})}"></a></li>
                 </ul>
@@ -64,7 +60,6 @@
                                         </div>
                                     </div>
                                 </form>
-                                <!-- </a> -->
                         </th:block>
                         </li>
                     </ul>

@@ -14,7 +14,7 @@ public class DetalleOrden implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String nombre;
     private double cantidad;
     private double precio;
@@ -30,7 +30,7 @@ public class DetalleOrden implements Serializable {
 
     }
 
-    public DetalleOrden(Integer id, String nombre, double cantidad, double precio, double total) {
+    public DetalleOrden(Long id, String nombre, double cantidad, double precio, double total) {
         super();
         this.id = id;
         this.nombre = nombre;
@@ -39,11 +39,11 @@ public class DetalleOrden implements Serializable {
         this.total = total;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
