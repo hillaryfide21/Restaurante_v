@@ -5,6 +5,9 @@
 package com.restaurante.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,13 +34,62 @@ public class Usuarios implements Serializable {
        private String dirección_usuario;
        private String telefono_usuario;
        private String correo_usuario;
+       
+       /*UTILIZADO PARA EL LOGIN*/
+       
        private String contrasena_usuario;
+         private int active;
+         private String roles="";
+         private String permissions="";
+        /*login */       
 
+       
       @JoinColumn (name="id_rol")
       @OneToOne
       @GeneratedValue(strategy = GenerationType.IDENTITY)
        private Roles id_rol;
 
+      /*Login*/
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
+    public String getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(String permissions) {
+        this.permissions = permissions;
+    }
+     
+    public List<String> getRoleList(){
+    if (this.roles.length() > 0){
+    return Arrays.asList(this.roles.split(","));
+    }
+    return new ArrayList<>();
+    }
+    
+        public List<String> getPermissionList(){
+    if (this.permissions.length() > 0){
+    return Arrays.asList(this.permissions.split(","));
+    }
+    return new ArrayList<>();
+    }
+        
+         /*Login end*/
     public long getId_usuario() {
         return id_usuario;
     }
@@ -108,7 +160,7 @@ public class Usuarios implements Serializable {
 
     public void setId_rol(Roles id_rol) {
         this.id_rol = id_rol;
-    }
-      
-   
+    }    
+ 
+    
 }
