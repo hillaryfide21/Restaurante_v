@@ -1,6 +1,7 @@
 package com.restaurante.controller;
 
 import com.restaurante.entity.Restaurantes;
+import com.restaurante.entity.horarioReservas;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

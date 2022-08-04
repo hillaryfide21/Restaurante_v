@@ -21,8 +21,6 @@
                         <th scoper="col">Nombre del restaurante</th>
                         <th scoper="col">Dirección del restaurante</th>
                         <th scoper="col">Teléfono del restaurante</th>
-                        <th scoper="col">Horario de lunes a viernes</th>
-                        <th scoper="col">Horario de sábado</th>
                         <th scoper="col">Correo del restaurante</th>
                         <!--  <th scoper="col">Editar</th> -->
                         <th scoper="col">Borrar</th>
@@ -34,8 +32,6 @@
                             <td th:text="${user.getRestaurante}"></td>
                             <td th:text="${user.getDireccion_restaurante}"></td>
                             <td th:text="${user.getTelefono_restaurante}"></td>
-                            <td th:text="${user.getHorario_LV}"></td>
-                            <td th:text="${user.getHorario_S}"></td>
                             <td th:text="${user.getCorreo_restaurante}"></td>
                             <!-- <td>
                                  <a th:href="@{/edit_rest/{id_restaurante} (id_restaurante=${user.getId_restaurante})}">Editar</a>

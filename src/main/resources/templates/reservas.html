@@ -42,13 +42,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <td th:text="${reserva.getTelefono_reserva}"></td>   
                     <td th:text="${reserva.getId_restaurante.getRestaurante}"></td>  
                     <td th:text="${reserva.getCantidad_reserva}"></td> 
-                    <td>
+                <!--    <td>
                         <a th:href="@{/editReserva/{id}(id=${reserva.getId_reserva})}">Edit</a>
                     </td>
                     <td>
                         <a th:href="@{/deleteReserva/{id}(id=${reserva.getId_reserva})}">Delete</a>
-                    </td>
-                </tr>
+                    </td> 
+                </tr>-->
             </th:block>
             </tbody>
         </table>

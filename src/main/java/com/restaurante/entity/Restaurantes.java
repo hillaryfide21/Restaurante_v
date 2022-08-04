@@ -5,24 +5,38 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="restaurantes")
-
 public class Restaurantes implements Serializable{
     
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     
     private long id_restaurante;
-    private String restaurante;
+    private String nombre_restaurante;
     private String direccion_restaurante;
     private String telefono_restaurante;
-    private String horario_LV;
-    private String horario_S;
+    private String horario_restaurante;
     private String correo_restaurante;
+    
+    @JoinColumn(name = "id_reserva_horario")
+    @ManyToOne
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private horarioReservas id_reserva_horario; /*fk*/
+    
 
+    public horarioReservas getId_reserva_horario() {
+        return id_reserva_horario;
+    }
+
+    public void setId_reserva_horario(horarioReservas id_reserva_horario) {
+        this.id_reserva_horario = id_reserva_horario;
+    }
+    
     public long getId_restaurante() {
         return id_restaurante;
     }
@@ -32,11 +46,11 @@ public class Restaurantes implements Serializable{
     }
 
     public String getRestaurante() {
-        return restaurante;
+        return nombre_restaurante;
     }
 
     public void setRestaurante(String restaurante) {
-        this.restaurante = restaurante;
+        this.nombre_restaurante = restaurante;
     }
 
     public String getDireccion_restaurante() {
@@ -55,22 +69,6 @@ public class Restaurantes implements Serializable{
         this.telefono_restaurante = telefono_restaurante;
     }
 
-    public String getHorario_LV() {
-        return horario_LV;
-    }
-
-    public void setHorario_LV(String horario_LV) {
-        this.horario_LV = horario_LV;
-    }
-
-    public String getHorario_S() {
-        return horario_S;
-    }
-
-    public void setHorario_S(String horario_S) {
-        this.horario_S = horario_S;
-    }
-
     public String getCorreo_restaurante() {
         return correo_restaurante;
     }
@@ -78,6 +76,20 @@ public class Restaurantes implements Serializable{
     public void setCorreo_restaurante(String correo_restaurante) {
         this.correo_restaurante = correo_restaurante;
     }
-        
+        public String getNombre_restaurante() {
+        return nombre_restaurante;
+    }
+
+    public void setNombre_restaurante(String nombre_restaurante) {
+        this.nombre_restaurante = nombre_restaurante;
+    }
+
+    public String getHorario_restaurante() {
+        return horario_restaurante;
+    }
+
+    public void setHorario_restaurante(String horario_restaurante) {
+        this.horario_restaurante = horario_restaurante;
+    }
     
 }
