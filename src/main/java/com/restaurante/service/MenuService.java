@@ -4,6 +4,7 @@ import com.restaurante.entity.Categorias;
 import com.restaurante.entity.Menu;
 import com.restaurante.repository.MenuRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +20,8 @@ public class MenuService implements IMenuService{
     }
 
     @Override
-    public Menu getDataById(long id_producto) {
-        return menuRepository.findById(id_producto).orElse(null);
+    public Optional<Menu> getDataById(long id_producto) {
+        return menuRepository.findById(id_producto);
     }
 
     @Override

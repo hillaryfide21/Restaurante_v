@@ -26,6 +26,16 @@ public class Menu implements Serializable{
     @ManyToOne
     @JoinColumn(name="id_categoria")
     private Categorias id_categoria;
+    
+    public Menu() {
+    }
+
+    public Menu(long id_producto, String nombre_producto, String detalle_producto, String precio_producto) {
+        this.id_producto = id_producto;
+        this.nombre_producto = nombre_producto;
+        this.detalle_producto = detalle_producto;
+        this.precio_producto = precio_producto;
+    }
 
     public long getId_producto() {
         return id_producto;

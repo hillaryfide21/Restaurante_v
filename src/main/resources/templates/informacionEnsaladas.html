@@ -29,7 +29,7 @@
 
             <h1 th:text="${titulo}" ></h1>
             <div class="lista">
-                <ul class="categorias"> <!--th:href="@{/editPersona/{id}(id=${user.getId})}"-->
+                <ul class="categorias">
                     <th:block th:each="user : ${categorias}">
                         <li><a th:text="${user.getNombre_categoria}" th:href="@{/{cat} (cat=${user.getReferencia_categoria})}"></a></li>
                 </ul>
@@ -39,29 +39,26 @@
                     <ul>
                         <th:block th:each="user : ${ensaladas}">
                             <li>
+                                <form  th:action="@{/carrito}" method="POST">
+                                    <div class="producto">
+                                        <input type="hidden" th:value="${user.getId_producto}" th:name="id_producto" id="id_producto">
+                                        <img th:src="@{/images/ensaladas/{cod} (cod=${user.getImagen_producto})}" class="imagen" alt="alt"/>
 
-
-                                <!--   <a href="index.html"> -->
-                                <div class="producto">
-                                    
-                                    <img src="images.pizzas/pizza-nordica.jpg" class="imagen" alt="alt"/>
-                                    
-                                    <div class="texto">
-                                        <div class="titulos">
-                                            <h4 th:text="${user.getNombre_producto}"></h4>
-                                            <h5 th:text="'$' + ${user.getPrecio_producto}"></h5>
-                                        </div>
-                                        <div class="cabecera">
-                                            <div class="desc">
-                                                <p th:text= "${user.getDetalle_producto}"></p>
+                                        <div class="texto">
+                                            <div class="titulos">
+                                                <h4 th:text="${user.getNombre_producto}"></h4>
+                                                <h5 th:text="'$' + ${user.getPrecio_producto}"></h5>
                                             </div>
-                                            <div class='boton'>
-                                                <button type="submit" class="btn_agregar"><img src="images.pizzas/boton-agregar.png" class="icono-agregar" alt="alt"/></button>
+                                            <div class="cabecera">
+                                                <div class="desc">
+                                                    <p th:text= "${user.getDetalle_producto}"></p>
+                                                </div>
+                                                <div class='boton'>
+                                                    <button type="submit" class="btn_agregar"><img src="images.pizzas/boton-agregar.png" class="icono-agregar" alt="alt"/></button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- </a> -->
                         </th:block>
                         </li>
                     </ul>

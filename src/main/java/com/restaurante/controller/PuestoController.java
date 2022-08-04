@@ -61,4 +61,9 @@ public class PuestoController {
         puestoService.delete(idPuesto);
         return "redirect:/puesto";
     }
+    
+     @GetMapping("/homepage")
+    public String index() {
+        return "homepage";
+    }
 }
