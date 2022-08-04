@@ -128,34 +128,30 @@ INSERT INTO cupones VALUES (1, 'Segundo a mitad de precio', 'Segunda pizza de la
 INSERT INTO contacto VALUES (1, '21/3/2022', 'Hillary Madriz', '8888-8888', 'h@mail.com', 'Sugerencia', 'Agradecería puedan tener un menu de ninos')
 , (2, '21/7/2022', 'Mariana Perez', '8778-8888', 'm@mail.com', 'Evento', 'Quisiera saber si puedo reservar para un evento ya que no veo esa opcion en la página');
 
-
-CREATE TABLE `restaurantes` (
-  `id_restaurante` int NOT NULL AUTO_INCREMENT,
-  `restaurante` varchar(100) NOT NULL,
-  `direccion_restaurante` varchar(100),
+  CREATE TABLE `restaurantes` (
+  `id_restaurante` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_restaurante` varchar(100) NOT NULL,
+  `direccion_restaurante` varchar(500),
   `telefono_restaurante` varchar(50),
-  `horario_LV` varchar(30),
-  `horario_S` varchar(30),
-  `correo_restaurante` varchar(100),
-  PRIMARY KEY (`id_restaurante`)
-);
+  `horario_restaurante` varchar(500),
+  `correo_restaurante` varchar(500),
+  `horarioReserv` int(50),
+  PRIMARY KEY (`id_restaurante`),
+  CONSTRAINT `fk_solicitud_horarios` FOREIGN KEY (`horarioReserv`) REFERENCES `horarioReservas` (`id_reserva_horario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ;
+SELECT * from restaurantes;
+
 
 insert into restaurantes values (1, 'Restaurante Paseo Colon', 'Frente al Hotel 
-Ambasador sobre el Paseo Colon, Calle 28, San Jose', '+506 2220-2530', '10:00am-9:00pm',
-'10:00am-8:00pm', 'restpaseocolon@patxis.com');
+Ambasador sobre el Paseo Colon, Calle 28, San Jose', '+506 2220-2530', '10:00am-9:00pm', 'restpaseocolon@patxis.com',1);
 
 insert into restaurantes values (2, 'Restaurante Parque de la Paz', '25 metros 
-al norte de la Rotonda de la Y Griega', '+506 2220-2632', '10:00am-9:00pm',
- '10:00am-8:00pm', 'restparquepaz@patxis.com');
+al norte de la Rotonda de la Y Griega', '+506 2220-2632', '10:00am-9:00pm', 'restparquepaz@patxis.com',2);
 
-insert into restaurantes values (3, 'Restaurante Escazú', 'Frente Perimercado 
-Los Anonos, Carretera vieja Escazu', '+506 2220-2735', '10:00am-9:00pm',
- '10:00am-8:00pm', 'restescazu@patxis.com');
- 
- select * from restaurantes;
+insert into restaurantes values (3,'Restaurante Guanacaste', '100 mts sur del palo de mango', '+506 4567-7862', '10:00am-9:00pm', 'restescazu@patxis.com',2);
 
   CREATE TABLE `reservas` (
-  `id_reserva` int(11) NOT NULL AUTO_INCREMENT,
+  `id_reserva` int(11) NOT NULL,
   `dia_reserva` varchar(50),
   `hora_reserva` varchar(50),
   `nombre_reserva` varchar(100) NOT NULL,
@@ -165,6 +161,9 @@ Los Anonos, Carretera vieja Escazu', '+506 2220-2735', '10:00am-9:00pm',
   PRIMARY KEY (`id_reserva`),
   CONSTRAINT `fk_reserva_restaurante` FOREIGN KEY (`id_restaurante`) REFERENCES `restaurantes` (`id_restaurante`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ;
+
+INSERT INTO reservas values (1,'Lunes','10:34:09 AM','Juan Rodriguez',5,4543123,1);
+Select * from reservas;
 
   CREATE TABLE `pedidos` (
   `id_pedido` int(11) NOT NULL AUTO_INCREMENT,
@@ -187,7 +186,24 @@ Los Anonos, Carretera vieja Escazu', '+506 2220-2735', '10:00am-9:00pm',
    CONSTRAINT `fk_pedido_x_pedido` FOREIGN KEY (`id_producto`) REFERENCES `menu` (`id_producto`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ;
 
-
+CREATE TABLE `horarioReservas`(
+	`id_reserva_horario` int(50) not null auto_increment,
+    `horario1` boolean, -- 11-12
+    `horario2` boolean, -- 12-13
+    `horario3` boolean, -- 13-14
+    `horario4` boolean, -- 18-19
+    `horario5` boolean, -- 19-20
+    `horario6` boolean, -- 20-21
+    `horario1Cant` int(10), -- cant max 6 reservas por hora
+    `horario2Cant` int(10),
+    `horario3Cant` int(10),
+    `horario4Cant` int(10),
+    `horario5Cant` int(10),
+    `horario6Cant` int(10),
+    PRIMARY KEY (`id_reserva_horario`)
+);
+insert into horarioReservas values (3,1,1,1,1,1,1,6,6,6,6,6,6);
+SELECT * from horarioReservas;
 
 INSERT INTO `roles` VALUES (1,"Presidente");
 INSERT INTO `roles` VALUES (2,"Vice-Presidente");
