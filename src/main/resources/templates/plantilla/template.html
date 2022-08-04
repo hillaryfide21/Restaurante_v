@@ -18,55 +18,59 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <header th:fragment="header">
             <nav class="navbar navbar-expand-lg bg-black">
                 <div class="container-fluid">
-
-                    <a class="navbar-brand"  href="home.html">
+                    <a class="navbar-brand"  href="homepage">
                         <img src="images/navbar/pizza.png" alt="" width="70" height="64">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-left:1px; padding-right:1px;">
 
                             <li class="nav-item">
-                                <a class="nav-link active" style="color:white; font-weight: bold; font-size: 18px;" aria-current="page" href="menu_1.html">Menú</a>
+                                <a class="nav-link active" style="color:white; font-weight: bold; font-size: 18px;" aria-current="page" href="pizzas">Menú</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="color:white; font-weight: bold; font-size: 18px" href="restaurantes.html">Restaurantes</a>
+                                <a class="nav-link" style="color:white; font-weight: bold; font-size: 18px" href="restaurantes">Restaurantes</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="color:white; font-weight: bold; font-size: 18px" href="cupones.html">Descuentos</a>
+                                <a class="nav-link" style="color:white; font-weight: bold; font-size: 18px" href="pizzas">Ordenar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color:white; font-weight: bold; font-size: 18px" href="reservas">Reservar</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" style="color:white; font-weight: bold; font-size: 18px" href="AcercaDeNosotros.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Acerca de nosotros
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="contactenos.html">Contáctenos</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="CV.html">Trabaje con nosotros</a></li>
+                                <ul style="background: black;" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a style="color: white;" class="dropdown-item" href="cuponesuser">Descuentos</a></li>
+                                    <li><hr style="color: white;" class="dropdown-divider"></li>
+                                    <li><a style="color: white;" class="dropdown-item" href="contactouser">Contáctenos</a></li>
+                                    <li><hr style="color: white;" class="dropdown-divider"></li>
+                                    <li><a style="color: white;" class="dropdown-item" href="solicituduser">Trabaje con nosotros</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" style="color:white; font-weight: bold; font-size: 18px" href="AcercaDeNosotros.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Administrativo
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="puesto">Puestos</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="usuarios">Usuarios</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="contacto">Contacto cliente</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="cupon">Descuentos</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="restaurantesT">Restaurantes</a></li>
+                                <ul style="background: black;" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a style="color: white;" class="dropdown-item" href="puesto">Puestos</a></li>
+                                    <li><hr style="color: white;" class="dropdown-divider"></li>
+                                    <li><a style="color: white;" class="dropdown-item" href="usuarios">Usuarios</a></li>
+                                    <li><hr style="color: white;" class="dropdown-divider"></li>
+                                    <li><a style="color: white;" class="dropdown-item" href="contacto">Contacto cliente</a></li>
+                                    <li><hr style="color: white;" class="dropdown-divider"></li>
+                                    <li><a style="color: white;" class="dropdown-item" href="cupon">Descuentos</a></li>
+                                    <li><hr style="color: white;" class="dropdown-divider"></li>
+                                    <li><a style="color: white;" class="dropdown-item" href="restaurantesT">Restaurantes</a></li>
                                 </ul>
                             </li>
                         </ul>
                         <ul class="d-flex">
                             <li class="nav-item">
-                                <a class="nav-link" style="color:white; font-weight: bold; font-size: 18px" href="login.html">Ingresar</a>
+                                <a class="nav-link" style="color:white; font-weight: bold; font-size: 18px" href="login">Ingresar</a>
                                 <a class="nav-link" style="color:white; font-weight: bold; font-size: 18px" href="usuariosN">Registrarse</a>
                             </li>
                         </ul>

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.restaurante.controller;
+
 import com.restaurante.entity.Puesto;
 import com.restaurante.service.IPuestoService;
 import java.util.List;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
  */
 @Controller
 public class PuestoController {
+
     @Autowired
     private IPuestoService puestoService;
 
@@ -31,20 +33,20 @@ public class PuestoController {
         model.addAttribute("puestos", listaPuesto);
         return "puestos";
     }
-    
+
     //Permite al usuario agregar un nuevo puesto 
     @GetMapping("/puestonuevo")
     public String crearPuesto(Model model) {
         model.addAttribute("puesto", new Puesto());
         return "crearPuesto";
     }
-    
-   @PostMapping("/savePuesto") 
-    public String guardarPuesto (@ModelAttribute Puesto puesto){ 
+
+    @PostMapping("/savePuesto")
+    public String guardarPuesto(@ModelAttribute Puesto puesto) {
         puestoService.savePuesto(puesto);
         return "redirect:/puesto";
     }
-    
+
     /*@GetMapping("/editPuesto/{id}")
     public String editarProducto (@PathVariable("id") Long idProducto, Model model){ //permite pasar variable al html
         Producto producto = productoService.getProductoById(idProducto);
@@ -53,17 +55,29 @@ public class PuestoController {
         model.addAttribute("tiendas",listaTiendas);
         return "crear";
     }*/
-    
-    
-    
     @GetMapping("/delete/{id}") //url como se comunica controller con servicio
-    public String borrarPuesto (@PathVariable("id") Long idPuesto){ //permite pasar variable al html
+    public String borrarPuesto(@PathVariable("id") Long idPuesto) { //permite pasar variable al html
         puestoService.delete(idPuesto);
         return "redirect:/puesto";
     }
-    
-     @GetMapping("/homepage")
+
+    @GetMapping("/homepage")
     public String index() {
         return "homepage";
+    }
+
+    @GetMapping("/login")
+    public String showLoginPage() {
+        return "login";
+    }
+
+    @GetMapping("/contactouser")
+    public String showContactUserForm() {
+        return "contactouser";
+    }
+
+    @GetMapping("/solicituduser")
+    public String showSolicitudUser() {
+        return "solicituduser";
     }
 }

@@ -11,8 +11,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 *{
     margin: 0;
-    font-family: 'Joan', serif;
-    text-decoration: none;
 }
 
 body{
@@ -79,7 +77,7 @@ h1{
 
 .lista{
     position: relative;
-    top: 220px;
+    top: 150px;
     margin-left: 410px;
     margin-right: auto;
 
@@ -188,13 +186,11 @@ h4{
 
 .titulos{
     display:flex; /*como se va alinear dentro caja - */
-    margin-bottom: 15px;
     
 }
 
 .cabecera{
     box-sizing: border-box;
-    display: flex;
     align-items: center;
     width: 550px;
 }

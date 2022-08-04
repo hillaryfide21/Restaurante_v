@@ -15,8 +15,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 *{
     margin: 0;
-    font-family: 'Joan', serif;
-    text-decoration: none;
 }
 
 body{
@@ -24,56 +22,11 @@ body{
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(54,53,53,1) 100%);
 }
 
-.navbar{
-    height:10vh;
-    width:100%;
-    display:flex; /*como se va alinear dentro caja - */
-    align-items: center;
-    background-color: black;
-    position:fixed;
-    border-color: white;
-    z-index: 2;
-}
-.logo{
-    width:70px;
-    cursor:pointer;
-    padding-left: 20px;
-}
-.login{
-    width: 80px;
-    padding-left: 20px;
-}
-.login ul li a{ /*estilo del boton login*/
-    cursor:pointer;
-}
 
-nav ul li { /*menu del centro*/
-    display: inline-block;
-    list-style:none;/*elimina los bullets*/
-    margin:0px 10px; /*espacio entre objetos*/
-    padding-left: 60px;
-    padding-right: 50px;
-}
-nav ul li a:hover,a:focus {
-    background-size: 100% 2px;
-    transition: background-size .5s;
-    color:green;
-}
-nav ul li a{
-    font-size: 20px;
-    color:white;
-    text-decoration: none; /*quitar subrayado*/
-    text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 2px;
-    transition: background-size .3s;
-}
 
 h1{
     position: relative;
-    top: 130px;
+    top: 100px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -82,7 +35,7 @@ h1{
 
 .lugares{
     position: relative;
-    top: 170px;
+    top: 120px;
     margin-left: auto;
     margin-right: auto;
     width: 700px;

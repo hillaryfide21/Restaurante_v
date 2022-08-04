@@ -23,50 +23,50 @@ import org.springframework.web.bind.annotation.PostMapping;
  */
 @Controller
 public class UsuariosController {
+
     @Autowired
     private IUsuariosService usuariosService;
-    
+
     @Autowired
-    private IRolesService rolesService;  
-    
+    private IRolesService rolesService;
+
     @GetMapping("/usuarios")
-    public String index(Model model){
-    List <Usuarios> listUsuarios = usuariosService.getAllUsuarios();
-      model.addAttribute("titulo", "Tabla de Usuarios");
-      model.addAttribute("usuarios", listUsuarios);
-      return "usuarios";     
+    public String index(Model model) {
+        List<Usuarios> listUsuarios = usuariosService.getAllUsuarios();
+        model.addAttribute("titulo", "Tabla de Usuarios");
+        model.addAttribute("usuarios", listUsuarios);
+        return "usuarios";
     }
-    
-   
-  @GetMapping("/usuariosN")
-  
+
+    @GetMapping("/usuariosN")
+
     public String CrearUsuario(Model model) {
         List<Roles> ListRol = rolesService.listRol();
-        model.addAttribute("usuarios",new Usuarios());
+        model.addAttribute("usuarios", new Usuarios());
         model.addAttribute("rol", ListRol);
         return "Crear";
-    } 
-    
-     @PostMapping("/saveUsuario")
-    public String GuardarUsuario (@ModelAttribute Usuarios usuarios ){
+    }
+
+    @PostMapping("/saveUsuario")
+    public String GuardarUsuario(@ModelAttribute Usuarios usuarios) {
         usuariosService.saveUsuario(usuarios);
         return "redirect:/usuarios";
     }
-    
-        @GetMapping("/editUsuario/{id}")
-    public String editarPersona(@PathVariable("id")long id_usuario,Model model){
-    Usuarios usuarios=usuariosService.getUsuarioByid_usuario(id_usuario);
-    List<Roles> listRol=rolesService.listRol();
-    model.addAttribute("usuarios",usuarios);
-    model.addAttribute("roles",listRol);
-    return "Crear";
-            }
-    
-      @GetMapping("/deleteusuario/{id}")
-    public String eliminarUsuario(@PathVariable("id")long id_usuario){
-    usuariosService.delete(id_usuario);
-    return "redirect:/usuario";
 
-}
+    @GetMapping("/editUsuario/{id}")
+    public String editarPersona(@PathVariable("id") long id_usuario, Model model) {
+        Usuarios usuarios = usuariosService.getUsuarioByid_usuario(id_usuario);
+        List<Roles> listRol = rolesService.listRol();
+        model.addAttribute("usuarios", usuarios);
+        model.addAttribute("roles", listRol);
+        return "Crear";
+    }
+
+    @GetMapping("/deleteusuario/{id}")
+    public String eliminarUsuario(@PathVariable("id") long id_usuario) {
+        usuariosService.delete(id_usuario);
+        return "redirect:/usuario";
+
+    }
 
 }
