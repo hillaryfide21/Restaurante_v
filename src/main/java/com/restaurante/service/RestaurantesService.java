@@ -31,5 +31,8 @@ public class RestaurantesService implements IRestaurantesService{
     public void delete(long id_restaurante) {
         restaurantesRepository.deleteById(id_restaurante);
     }
-
+    @Override
+    public long maxReservaHorario(){
+        return restaurantesRepository.count();
+    }
 }

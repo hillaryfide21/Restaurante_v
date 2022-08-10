@@ -45,6 +45,7 @@ public class ReservaController {
         List<Restaurantes> ListRestaurantes = restauranteService.getAllData();
         model.addAttribute("reserva", new Reservas());
         model.addAttribute("restaurantes", ListRestaurantes);
+        
         return "crearReserva";
     }
 

@@ -1,7 +1,7 @@
 package com.restaurante.controller;
 
 import com.restaurante.entity.Restaurantes;
-import com.restaurante.entity.horarioReservas;
+import com.restaurante.entity.horario_reservas;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,7 +34,7 @@ public class RestaurantesController {
         List<Restaurantes> listaInfo = restaurantesService.getAllData();
         model.addAttribute("titulo", "Restaurantes");
         model.addAttribute("restaurantes", listaInfo);
-
+        
         return "restaurantesT";
     }
 
@@ -46,10 +46,14 @@ public class RestaurantesController {
     
     @PostMapping("/saveRestaurante")
     public String guardarRestaurante (@ModelAttribute Restaurantes info) {
+        /*info.setId_reserva_horario(new horarioReservas(5));*/
         restaurantesService.saveInformacion(info);
         return "redirect:/restaurantesT";
     }
-    
+    @PostMapping("/check")
+    public long check (Model model) {
+        return restaurantesService.maxReservaHorario();
+    }
     /*@GetMapping("/edit_rest/{id_restaurante}")
     public String editarRestaurante (@PathVariable("id_restaurante") Long idRest, Model model) {
         Restaurantes rest = restaurantesService.getDataById(idRest);

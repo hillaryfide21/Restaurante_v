@@ -16,80 +16,73 @@ public class Restaurantes implements Serializable{
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     
-    private long id_restaurante;
-    private String nombre_restaurante;
-    private String direccion_restaurante;
-    private String telefono_restaurante;
-    private String horario_restaurante;
-    private String correo_restaurante;
+    private long id;
+    private String nombre;
+    private String direccion;
+    private String telefono;
+    private String horario="10:00am-9:00pm";
+    private String correo;
     
-    @JoinColumn(name = "id_reserva_horario")
+    @JoinColumn(name = "id_horario")
     @ManyToOne
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private horarioReservas id_reserva_horario; /*fk*/
-    
+    private horario_reservas id_horario; /*fk*/
 
-    public horarioReservas getId_reserva_horario() {
-        return id_reserva_horario;
-    }
-
-    public void setId_reserva_horario(horarioReservas id_reserva_horario) {
-        this.id_reserva_horario = id_reserva_horario;
-    }
-    
-    public long getId_restaurante() {
-        return id_restaurante;
+    public long getId() {
+        return id;
     }
 
-    public void setId_restaurante(long id_restaurante) {
-        this.id_restaurante = id_restaurante;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getRestaurante() {
-        return nombre_restaurante;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setRestaurante(String restaurante) {
-        this.nombre_restaurante = restaurante;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDireccion_restaurante() {
-        return direccion_restaurante;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setDireccion_restaurante(String direccion_restaurante) {
-        this.direccion_restaurante = direccion_restaurante;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getTelefono_restaurante() {
-        return telefono_restaurante;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setTelefono_restaurante(String telefono_restaurante) {
-        this.telefono_restaurante = telefono_restaurante;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public String getCorreo_restaurante() {
-        return correo_restaurante;
+    public String getHorario() {
+        return horario;
     }
 
-    public void setCorreo_restaurante(String correo_restaurante) {
-        this.correo_restaurante = correo_restaurante;
-    }
-        public String getNombre_restaurante() {
-        return nombre_restaurante;
+    public void setHorario(String horario) {
+        this.horario = horario;
     }
 
-    public void setNombre_restaurante(String nombre_restaurante) {
-        this.nombre_restaurante = nombre_restaurante;
+    public String getCorreo() {
+        return correo;
     }
 
-    public String getHorario_restaurante() {
-        return horario_restaurante;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
-    public void setHorario_restaurante(String horario_restaurante) {
-        this.horario_restaurante = horario_restaurante;
+    public horario_reservas getId_horario() {
+        return id_horario;
     }
-    
+
+    public void setId_horario(horario_reservas id_horario) {
+        this.id_horario = id_horario;
+    }
+
+   
 }

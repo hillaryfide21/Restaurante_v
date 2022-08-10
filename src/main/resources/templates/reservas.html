@@ -36,12 +36,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <tbody>
             <th:block th:each="reserva : ${reservas}">
                 <tr>
-                    <td th:text="${reserva.getDia_reserva}"></td>
-                    <td th:text="${reserva.getHora_reserva}"></td>
-                    <td th:text="${reserva.getNombre_reserva}"></td>
-                    <td th:text="${reserva.getTelefono_reserva}"></td>   
-                    <td th:text="${reserva.getId_restaurante.getRestaurante}"></td>  
-                    <td th:text="${reserva.getCantidad_reserva}"></td> 
+                    <td th:text="${reserva.getDia}"></td>
+                    <td th:text="${reserva.getHora}"></td>
+                    <td th:text="${reserva.getNombre}"></td>
+                    <td th:text="${reserva.getTelefono}"></td>   
+                    <td th:text="${reserva.getIdRestaurante.getNombre}"></td>  
+                    <td th:text="${reserva.getCantidad}"></td> 
                 <!--    <td>
                         <a th:href="@{/editReserva/{id}(id=${reserva.getId_reserva})}">Edit</a>
                     </td>

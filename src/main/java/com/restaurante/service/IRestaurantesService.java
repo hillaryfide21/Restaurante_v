@@ -8,4 +8,5 @@ public interface IRestaurantesService {
     public Restaurantes getDataById (long id_restaurante);
     public void saveInformacion(Restaurantes registro);
     public void delete(long id_restaurante);
+    public long maxReservaHorario();
 }

@@ -15,25 +15,25 @@
                               th:action="@{/saveRestaurante}"
                               method="POST">
                 
-                <input type = "hidden" th:field="*{id_restaurante}">
+                <input type = "hidden" th:field="*{id}">
                 
                 
                 <h1> Restaurantes </h1>
                 <h2> Ingrese la información del restaurante </h2>
                 <div class="txt_field">
-                    <input type="text" required th:field="*{restaurante}">
+                    <input type="text" required th:field="*{nombre}">
                     <label>Nombre del restaurante</label>
                 </div>
                 <div class="txt_field">
-                    <input type="text" required th:field="*{direccion_restaurante}">
+                    <input type="text" required th:field="*{direccion}">
                     <label>Dirección del restaurante</label>
                 </div>
                 <div class="txt_field">
-                    <input type="text" required th:field="*{telefono_restaurante}">
+                    <input type="text" required th:field="*{telefono}">
                     <label>Teléfono del restaurante</label>
                 </div>
                 <div class="txt_field">
-                    <input type="text" required th:field="*{correo_restaurante}">
+                    <input type="text" required th:field="*{correo}">
                     <label>Correo del restaurante</label>
                 </div>
                 <input type="submit" value="Guardar">

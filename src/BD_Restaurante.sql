@@ -129,17 +129,24 @@ INSERT INTO contacto VALUES (1, '21/3/2022', 'Hillary Madriz', '8888-8888', 'h@m
 , (2, '21/7/2022', 'Mariana Perez', '8778-8888', 'm@mail.com', 'Evento', 'Quisiera saber si puedo reservar para un evento ya que no veo esa opcion en la página');
 
   CREATE TABLE `restaurantes` (
-  `id_restaurante` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre_restaurante` varchar(100) NOT NULL,
-  `direccion_restaurante` varchar(500),
-  `telefono_restaurante` varchar(50),
-  `horario_restaurante` varchar(500),
-  `correo_restaurante` varchar(500),
-  `horarioReserv` int(50),
-  PRIMARY KEY (`id_restaurante`),
-  CONSTRAINT `fk_solicitud_horarios` FOREIGN KEY (`horarioReserv`) REFERENCES `horarioReservas` (`id_reserva_horario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ;
+  `id` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  `nombre` varchar(100) NOT NULL,
+  `direccion` varchar(500) DEFAULT NULL,
+  `telefono` varchar(50) DEFAULT NULL,
+  `horario` varchar(500) DEFAULT NULL,
+  `correo` varchar(500) DEFAULT NULL,
+  
+  `id_horario` int,
+FOREIGN KEY (`id_horario`) REFERENCES `horario_reservas` (`id`)
+);
 SELECT * from restaurantes;
+
+INSERT INTO `restaurantes` VALUES ('1','Restaurante Paseo Colon','Frente al Hotel \nAmbasador sobre el Paseo Colon, Calle 28, San Jose','+506 2220-2530','10:00am-9:00pm','restpaseocolon@patxis.com',1);
+INSERT INTO `restaurantes` VALUES (2,'Restaurante Parque de la Paz','25 metros \nal norte de la Rotonda de la Y Griega','+506 2220-2632','10:00am-9:00pm','restparquepaz@patxis.com',2);
+INSERT INTO `restaurantes` VALUES(3,'Restaurante Guanacaste','100 mts sur del palo de mango','+506 4567-7862','10:00am-9:00pm','restescazu@patxis.com',3);
+INSERT INTO `restaurantes` VALUES(4,'Restaurante Paseo de los turistas','Puntarenas, Paseo de los turistas','+506 7833-3247','10:00am-9:00pm','restpuntarenas@patxis.com',4);
+
 
 
 insert into restaurantes values (1, 'Restaurante Paseo Colon', 'Frente al Hotel 
@@ -150,17 +157,17 @@ al norte de la Rotonda de la Y Griega', '+506 2220-2632', '10:00am-9:00pm', 'res
 
 insert into restaurantes values (3,'Restaurante Guanacaste', '100 mts sur del palo de mango', '+506 4567-7862', '10:00am-9:00pm', 'restescazu@patxis.com',2);
 
-  CREATE TABLE `reservas` (
-  `id_reserva` int(11) NOT NULL,
-  `dia_reserva` varchar(50),
-  `hora_reserva` varchar(50),
-  `nombre_reserva` varchar(100) NOT NULL,
-  `cantidad_reserva` int(10),
-  `telefono_reserva` varchar(50),
-  `id_restaurante` int(11) NOT NULL,
-  PRIMARY KEY (`id_reserva`),
-  CONSTRAINT `fk_reserva_restaurante` FOREIGN KEY (`id_restaurante`) REFERENCES `restaurantes` (`id_restaurante`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ;
+ CREATE TABLE `reservas` (
+  `id` int(11) auto_increment NOT NULL,
+  `dia` varchar(50),
+  `hora` varchar(50),
+  `nombre` varchar(100) NOT NULL,
+  `cantidad` int(10),
+  `telefono` varchar(50),
+  `id_restaurante` int NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id_restaurante`) REFERENCES `restaurantes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
 
 INSERT INTO reservas values (1,'Lunes','10:34:09 AM','Juan Rodriguez',5,4543123,1);
 Select * from reservas;
@@ -186,13 +193,13 @@ Select * from reservas;
    CONSTRAINT `fk_pedido_x_pedido` FOREIGN KEY (`id_producto`) REFERENCES `menu` (`id_producto`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ;
 
-CREATE TABLE `horarioReservas`(
-	`id_reserva_horario` int(50) not null auto_increment,
+CREATE TABLE `horario_reservas`(
+	`id` int(50) not null auto_increment,
     `horario1` boolean, -- 11-12
     `horario2` boolean, -- 12-13
     `horario3` boolean, -- 13-14
     `horario4` boolean, -- 18-19
-    `horario5` boolean, -- 19-20
+    `horario5` boolean, -- 19-20restaurantes
     `horario6` boolean, -- 20-21
     `horario1Cant` int(10), -- cant max 6 reservas por hora
     `horario2Cant` int(10),
@@ -200,10 +207,11 @@ CREATE TABLE `horarioReservas`(
     `horario4Cant` int(10),
     `horario5Cant` int(10),
     `horario6Cant` int(10),
-    PRIMARY KEY (`id_reserva_horario`)
+    PRIMARY KEY (`id`)
 );
-insert into horarioReservas values (3,1,1,1,1,1,1,6,6,6,6,6,6);
-SELECT * from horarioReservas;
+INSERT INTO `horario_reservas` VALUES (1,1,1,1,1,1,1,6,6,6,6,6,6),(2,1,1,1,1,1,1,6,6,6,6,6,6),(3,1,1,1,1,1,1,6,6,6,6,6,6);
+INSERT INTO `horario_reservas` VALUES (4,1,1,1,1,1,1,6,6,6,6,6,6),(5,1,1,1,1,1,1,6,6,6,6,6,6),(6,1,1,1,1,1,1,6,6,6,6,6,6);
+
 
 INSERT INTO `roles` VALUES (1,"Presidente");
 INSERT INTO `roles` VALUES (2,"Vice-Presidente");

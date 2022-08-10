@@ -16,11 +16,11 @@ import javax.persistence.Table;
  * @author Marvin Camacho
  */
 @Entity
-@Table(name = "horarioReservas")
-public class horarioReservas implements Serializable{
+@Table(name = "horario_reservas")
+public class horario_reservas implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_reserva_horario;
+    private long id;
     
     private boolean horario1;
     private boolean horario2;
@@ -35,13 +35,30 @@ public class horarioReservas implements Serializable{
     private int horario4Cant;
     private int horario5Cant;
     private int horario6Cant;
+    /*
+    public horario_reservas(int id){
+        this.id = id;
+        this.horario1 = true;
+        this.horario2 = true;
+        this.horario3 = true;
+        this.horario4 = true;
+        this.horario5 = true;
+        this.horario6 = true;
+        
+        this.horario1Cant = 6;
+        this.horario2Cant = 6;
+        this.horario3Cant = 6;
+        this.horario4Cant = 6;
+        this.horario5Cant = 6;
+        this.horario6Cant = 6;
+    }*/
 
-    public long getId_reserva_horario() {
-        return id_reserva_horario;
+    public long getId_horario() {
+        return id;
     }
 
-    public void setId_reserva_horario(long id_reserva_horario) {
-        this.id_reserva_horario = id_reserva_horario;
+    public void setId_horario(long id_reserva_horario) {
+        this.id = id_reserva_horario;
     }
 
     public boolean isHorario1() {
