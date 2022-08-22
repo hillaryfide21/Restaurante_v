@@ -142,20 +142,15 @@ FOREIGN KEY (`id_horario`) REFERENCES `horario_reservas` (`id`)
 );
 SELECT * from restaurantes;
 
-INSERT INTO `restaurantes` VALUES ('1','Restaurante Paseo Colon','Frente al Hotel \nAmbasador sobre el Paseo Colon, Calle 28, San Jose','+506 2220-2530','10:00am-9:00pm','restpaseocolon@patxis.com',1);
-INSERT INTO `restaurantes` VALUES (2,'Restaurante Parque de la Paz','25 metros \nal norte de la Rotonda de la Y Griega','+506 2220-2632','10:00am-9:00pm','restparquepaz@patxis.com',2);
-INSERT INTO `restaurantes` VALUES(3,'Restaurante Guanacaste','100 mts sur del palo de mango','+506 4567-7862','10:00am-9:00pm','restescazu@patxis.com',3);
-INSERT INTO `restaurantes` VALUES(4,'Restaurante Paseo de los turistas','Puntarenas, Paseo de los turistas','+506 7833-3247','10:00am-9:00pm','restpuntarenas@patxis.com',4);
-
-
-
 insert into restaurantes values (1, 'Restaurante Paseo Colon', 'Frente al Hotel 
-Ambasador sobre el Paseo Colon, Calle 28, San Jose', '+506 2220-2530', '10:00am-9:00pm', 'restpaseocolon@patxis.com',1);
+Ambasador sobre el Paseo Colon, Calle 28, San Jose', '+506 2220-2530', '10:00am-9:00pm', 'restpaseocolon@patxis.com',1, '9.935287, -84.091523');
 
 insert into restaurantes values (2, 'Restaurante Parque de la Paz', '25 metros 
-al norte de la Rotonda de la Y Griega', '+506 2220-2632', '10:00am-9:00pm', 'restparquepaz@patxis.com',2);
+al norte de la Rotonda de la Y Griega', '+506 2220-2632', '10:00am-9:00pm', 'restparquepaz@patxis.com',2,'9.915437, -84.068173');
 
-insert into restaurantes values (3,'Restaurante Guanacaste', '100 mts sur del palo de mango', '+506 4567-7862', '10:00am-9:00pm', 'restescazu@patxis.com',2);
+insert into restaurantes values (3,'Restaurante Guanacaste', 'Frente al INS de Liberia', '+506 4567-7862', '10:00am-9:00pm', 'restescazu@patxis.com',2,'10.627671, -85.442090');
+
+
 
  CREATE TABLE `reservas` (
   `id` int(11) auto_increment NOT NULL,
