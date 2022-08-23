@@ -27,12 +27,12 @@
 
         <div class="productos">
             <ul>
-                <th:block th:each="user : ${ensaladas}">
+                <th:block th:each="user : ${pastas}">
                     <li>
                         <form  th:action="@{/carrito}" method="POST">
                             <div class="producto">
                                 <input type="hidden" th:value="${user.getId_producto}" th:name="id_producto" id="id_producto">
-                                <img th:src="@{/images/ensaladas/{cod} (cod=${user.getImagen_producto})}" class="imagen" alt="alt"/>
+                                <img th:src="@{/images/pastas/{cod} (cod=${user.getImagen_producto})}" class="imagen" alt="alt"/>
 
                                 <div class="texto">
                                     <div class="titulos">

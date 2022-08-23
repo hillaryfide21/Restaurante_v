@@ -45,6 +45,11 @@ public class MenuController {
     //Almacena los datos de la orden
     Orden orden = new Orden();
 
+    @GetMapping("/")
+    public String Home(){
+        return "homepage";
+    }
+    
     @GetMapping("/menu")
     public String obtenerCategorias(Model model) {
         List<Categorias> listaCategorias = categoriasService.listaCategorias();
@@ -53,20 +58,20 @@ public class MenuController {
         return "menu";
     }
 
-    @GetMapping("/pizzas")
-    public String obtenerDataPizzas(Model model) {
-        Categorias categoria = new Categorias(3);
+    @GetMapping("/entradas")
+    public String obtenerDataEntradas(Model model) {
+        Categorias categoria = new Categorias(1);
         categoria.getId_categoria();
         List<Menu> listaInfo = menuService.findAll(categoria);
-        model.addAttribute("titulo", "Nuestras Pizzas");
-        model.addAttribute("pizzas", listaInfo);
+        model.addAttribute("titulo", "Nuestras Entradas");
+        model.addAttribute("entradas", listaInfo);
 
         List<Categorias> listaCategorias = categoriasService.listaCategorias();
         model.addAttribute("categorias", listaCategorias);
 
-        return "informacionPizzas";
+        return "informacionEntradas";
     }
-
+    
     @GetMapping("/ensaladas")
     public String obtenerDataEnsaladas(Model model) {
         Categorias categoria = new Categorias(2);
@@ -80,6 +85,50 @@ public class MenuController {
 
         return "informacionEnsaladas";
     }
+    
+    
+    @GetMapping("/pizzas")
+    public String obtenerDataPizzas(Model model) {
+        Categorias categoria = new Categorias(3);
+        categoria.getId_categoria();
+        List<Menu> listaInfo = menuService.findAll(categoria);
+        model.addAttribute("titulo", "Nuestras Pizzas");
+        model.addAttribute("pizzas", listaInfo);
+
+        List<Categorias> listaCategorias = categoriasService.listaCategorias();
+        model.addAttribute("categorias", listaCategorias);
+
+        return "informacionPizzas";
+    }
+    
+    @GetMapping("/pastas")
+    public String obtenerDataPastas(Model model) {
+        Categorias categoria = new Categorias(4);
+        categoria.getId_categoria();
+        List<Menu> listaInfo = menuService.findAll(categoria);
+        model.addAttribute("titulo", "Nuestras Pastas");
+        model.addAttribute("pastas", listaInfo);
+
+        List<Categorias> listaCategorias = categoriasService.listaCategorias();
+        model.addAttribute("categorias", listaCategorias);
+
+        return "informacionPastas";
+    }
+    
+    @GetMapping("/bebidas")
+    public String obtenerDataBebidas(Model model) {
+        Categorias categoria = new Categorias(5);
+        categoria.getId_categoria();
+        List<Menu> listaInfo = menuService.findAll(categoria);
+        model.addAttribute("titulo", "Nuestras Bebidas");
+        model.addAttribute("bebidas", listaInfo);
+
+        List<Categorias> listaCategorias = categoriasService.listaCategorias();
+        model.addAttribute("categorias", listaCategorias);
+
+        return "informacionBebidas";
+    }
+    
 
     @PostMapping("/carrito")
     public String addCarrito(@RequestParam(value = "id_producto") Long id, Model model) {
