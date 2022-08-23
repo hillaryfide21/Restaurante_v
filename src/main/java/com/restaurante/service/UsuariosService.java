@@ -39,6 +39,11 @@ public class UsuariosService implements IUsuariosService{
     public void delete(long id_usuario) {
         usuariosRepository.deleteById(id_usuario);
     }
-    
-    
+
+    @Override
+    public Usuarios findbyCorreo(String correo) {
+        return usuariosRepository.findByCorreo(correo);
+    }
+
+  
 }

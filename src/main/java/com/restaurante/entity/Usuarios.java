@@ -33,7 +33,7 @@ public class Usuarios implements Serializable {
        private String apellido2_usuario;
        private String dirección_usuario;
        private String telefono_usuario;
-       private String correo_usuario;
+       private String correo;
        
        /*UTILIZADO PARA EL LOGIN*/
        
@@ -41,7 +41,7 @@ public class Usuarios implements Serializable {
          private int active;
          private String roles="";
          private String permissions="";
-        /*login */       
+        /*login INICIO*/       
 
        
       @JoinColumn (name="id_rol")
@@ -49,7 +49,7 @@ public class Usuarios implements Serializable {
       @GeneratedValue(strategy = GenerationType.IDENTITY)
        private Roles id_rol;
 
-      /*Login*/
+      /*Login-SETS-GETS-LISTAS*/
 
     public int getActive() {
         return active;
@@ -89,7 +89,7 @@ public class Usuarios implements Serializable {
     return new ArrayList<>();
     }
         
-         /*Login end*/
+         /*LOGIN END*/
     public long getId_usuario() {
         return id_usuario;
     }
@@ -138,12 +138,12 @@ public class Usuarios implements Serializable {
         this.telefono_usuario = telefono_usuario;
     }
 
-    public String getCorreo_usuario() {
-        return correo_usuario;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setCorreo_usuario(String correo_usuario) {
-        this.correo_usuario = correo_usuario;
+    public void setCorreo(String correo_usuario) {
+        this.correo = correo_usuario;
     }
 
     public String getContrasena_usuario() {

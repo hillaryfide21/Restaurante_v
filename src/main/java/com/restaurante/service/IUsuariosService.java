@@ -17,4 +17,10 @@ public interface IUsuariosService {
     public void saveUsuario (Usuarios usuario);
     public void delete (long id_usuario);
     
+    
+    
+    /*ERROR DE FINDBY*/
+    public Usuarios findbyCorreo (String correo);
+
+    
 }
