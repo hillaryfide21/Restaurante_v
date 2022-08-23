@@ -4,7 +4,7 @@
         <title>Informacion</title>
         <link rel="stylesheet" href="css/restaurantes.css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
@@ -18,20 +18,56 @@
     </head>
 
     <body>   
-         <header th:replace="plantilla/template::header"></header>
+        <header th:replace="plantilla/template::header"></header>
         <h1 th:text="${titulo}" style="color: white;"></h1>
 
         <div class="lugares">
             <th:block th:each="user : ${restaurantes}">
-                <div class="lugar">
-                    <img src="images.restaurantes/pin-de-ubicacion.png" class="pin" alt="Este es un icono de pin"/>
+                <div class="lugar">          
+
+                    <img th:src="@{${'https://maps.googleapis.com/maps/api/staticmap?center=' +
+                         user.getMaps +
+                         '&size=150x150&markers=size:tiny,color:red%7Clabel:P%7C'+
+                         user.getMaps +
+                         '&key=AIzaSyCdLq97MS66icDg_4s3nCVRlWrcbvndKa0'}}">
+
                     <div class="texto">
 
                         <h4 th:text="${user.getNombre}"></h4>
                         <p th:text= "${user.getDireccion}"></p>
+                        <p th:text= "${user.getHorario}"></p>
+                        <p th:text= "${user.getTelefono}"></p>
 
                     </div>
-                    <img src="images.restaurantes/right-arrow (1).png" class="flecha" alt="Este es un icono para avanzar"/>
+                    <img src="images.restaurantes/right-arrow (1).png" class="flecha" alt="Este es un icono para avanzar" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@${user.getNombre}" th:value='${user.getNombre}'>
+
+<!-- 
+                    <input type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@${user.getNombre}" th:value='${user.getNombre}'>
+-->
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <input type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img th:src="@{${'https://maps.googleapis.com/maps/api/staticmap?center=' +
+                                         user.getMaps +
+                                         '&size=350x350&markers=size:tiny,color:red%7Clabel:P%7C'+
+                                         user.getMaps +
+                                         '&key=AIzaSyCdLq97MS66icDg_4s3nCVRlWrcbvndKa0'}}">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </th:block>
         </div>
