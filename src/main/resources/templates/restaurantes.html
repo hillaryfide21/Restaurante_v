@@ -23,7 +23,7 @@
 
         <div class="lugares">
             <th:block th:each="user : ${restaurantes}">
-                <div class="lugar">          
+                <div class="lugar" style="z-index: 1;">          
 
                     <img th:src="@{${'https://maps.googleapis.com/maps/api/staticmap?center=' +
                          user.getMaps +
