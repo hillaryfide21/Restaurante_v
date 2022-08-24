@@ -33,7 +33,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <h1>Nuestro Menú</h1>
 
             <div class="lista">
-
                 <ul class="categorias"> <!--th:href="@{/editPersona/{id}(id=${user.getId})}"-->
                     <th:block th:each="user : ${categorias}">
                         <li><a th:text="${user.getNombre_categoria}" th:href="@{/{cat} (cat=${user.getReferencia_categoria})}"></a></li>

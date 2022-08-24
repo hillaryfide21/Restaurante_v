@@ -19,11 +19,15 @@
 
     <body>   
         <header th:replace="plantilla/template::header"></header>
-        <h1 th:text="${titulo}" style="color: white;"></h1>
+        <h1 th:text="#{navbar.restaurantes}" style="color: white;"></h1>
 
         <div class="lugares">
             <th:block th:each="user : ${restaurantes}">
+<<<<<<< Updated upstream
                 <div class="lugar" style="z-index: 1;">          
+=======
+                <div class="lugar" style="z-index:1;">          
+>>>>>>> Stashed changes
 
                     <img th:src="@{${'https://maps.googleapis.com/maps/api/staticmap?center=' +
                          user.getMaps +

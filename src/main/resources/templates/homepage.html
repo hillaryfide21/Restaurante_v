@@ -86,9 +86,9 @@
                         <img src="images/home/hp112.jpg" style="width:100%; height: 70%;"  alt="descuento"/>
                         <div class="container" style="background: none;">
                             <div class="carousel-caption text-start" style="background: none;">
-                                <h1 style="background: none;">Vive nuestra experiencia culinaria</h1>
-                                <p style="background: none;">Disfruta la gastronomía italiana de primera calidad</p>
-                                <p style="background: none;"><a class="btn btn-success" href="#">Ver menú</a></p>
+                                <h1 style="background: none;" th:text="#{car.experience}"></h1>
+                                <p style="background: none;" th:text="#{car.experience2}"></p>
+                                <p style="background: none;"><a class="btn btn-success" href="/entradas" th:text="#{car.menu}"></a></p>
                             </div>
                         </div>
                     </div>
@@ -96,9 +96,9 @@
                         <img src="images/home/hp113.jpg" style="width:100%; height: 70%;"  alt="descuento"/>
                         <div style="background: none;" class="container" >
                             <div style="background: none;"class="carousel-caption text-start">
-                                <h1 style="background: none;">Ingredientes de primera calidad para deleitar tu paladar</h1>
-                                <p style="background: none;">Utilizamos ingredientes de la mejor calidad gracias a productores locales</p>
-                                <p style="background: none;"><a class="btn btn-success" href="#">Ver menú</a></p>
+                                <h1 style="background: none;" th:text="#{car.ingredientes}">Ingredientes de primera calidad para deleitar tu paladar</h1>
+                                <p style="background: none;" th:text="#{car.ingredientes2}">Utilizamos ingredientes de la mejor calidad gracias a productores locales</p>
+                                <p style="background: none;"><a class="btn btn-success" href="/entradas" th:text="#{car.menu}">Ver menú</a></p>
                             </div>
                         </div>
                     </div>
@@ -106,9 +106,9 @@
                         <img src="images/home/hp114.jpg" style="width:100%; height: 70%;"  alt="descuento"/>
                         <div class="container" >
                             <div style="background: none;" class="carousel-caption text-start">
-                                <h1 style="background: none;">Visita nuestros restaurantes</h1>
-                                <p style="background: none;">Contamos con varios acogedores restaurantes en el país. ¡Busca el más cercano!</p>
-                                <p style="background: none;"><a class="btn btn-success" href="#">Ver restaurantes</a></p>
+                                <h1 style="background: none;" th:text="#{car.visita}">Visita nuestros restaurantes</h1>
+                                <p style="background: none;" th:text="#{car.visita2}">Contamos con varios acogedores restaurantes en el país. ¡Busca el más cercano!</p>
+                                <p style="background: none;"><a class="btn btn-success" href="/restaurantes" th:text="#{car.rest.boton}">Ver restaurantes</a></p>
                             </div>
                         </div>
                     </div>
@@ -116,13 +116,13 @@
                         <img src="images/home/hp115.jpg" style="width:100%; height: 70%;"  alt="descuento"/>
                         <div class="container" >
                             <div style="background: none;" class="carousel-caption text-start">
-                                <h1 style="background: none;">Asegura tu espacio</h1>
-                                <p style="background: none;">Puedes realizar una reserva para tus actividades. ¡No te quedes sin tu campo!</p>
-                                <p style="background: none;"><a class="btn btn-success" href="#">Reservar</a></p>
+                                <h1 style="background: none;" th:text="#{car.reserva}"></h1>
+                                <p style="background: none;" th:text="#{car.reserva2}"></p>
+                                <p style="background: none;"><a class="btn btn-success" href="/reservaN" th:text="#{car.reservar}"></a></p>
                             </div>
                         </div>
                     </div>
-                   
+
 
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev" style="background: none;">
@@ -147,22 +147,22 @@
                         <div class="col-lg-4">
                             <img src="images/home/hp09.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140"  alt="descuento"/>
 
-                            <h2 class="fw-normal">Realiza tu pedido</h2>
-                            <p>¿Andas con prisa? Realiza tu pedido y asegurate que está listo cuando llegues al resturante</p>
-                            <p><a class="btn btn-success" href="#">Ir a realizar un pedido &raquo;</a></p>
+                            <h2 class="fw-normal" th:text="#{card.pedido}"></h2>
+                            <p th:text="#{card.pedido2}"></p>
+                            <p><a class="btn btn-success" href="/pizzas" th:text="#{card.pedido}"></a></p>
                         </div><!-- /.col-lg-4 -->
                         <div class="col-lg-4">
                             <img src="images/home/hp08.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140"  alt="descuento"/>
-                            <h2 class="fw-normal">Reserva tu espacio</h2>
-                            <p> Puedes reservar tu espacio para tus actividades sociales, corporativas, entre otros con solo un click</p>
-                            <p><a class="btn btn-success" href="#">Ir a reservar &raquo;</a></p>
+                            <h2 class="fw-normal" th:text="#{card.espacio}"></h2>
+                            <p th:text="#{card.espacio2}"></p>
+                            <p><a class="btn btn-success" href="reservaN" th:text="#{card.espacio}"></a></p>
                         </div><!-- /.col-lg-4 -->
                         <div class="col-lg-4">
                             <img src="images/home/hp10.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140"  alt="descuento"/>
 
-                            <h2 class="fw-normal">Registrate</h2>
-                            <p>Podrás estar enterado de nuestra novedades, ver las próximas actividades, obtener promociones y  más</p>
-                            <p><a class="btn btn-success" href="#">Ir a registrarme &raquo;</a></p>
+                            <h2 class="fw-normal" th:text="#{card.registro}"></h2>
+                            <p th:text="#{card.registro2}"></p>
+                            <p><a class="btn btn-success" href="/usuariosN" th:text="#{card.registro}"></a></p>
                         </div><!-- /.col-lg-4 -->
                     </div><!-- /.row -->
 
@@ -173,9 +173,9 @@
 
                     <div class="row featurette">
                         <div class="col-md-7">
-                            <h2 class="featurette-heading fw-normal lh-1">Italian & Relax <span class="text-muted"> Cálido ambiente</span></h2>
+                            <h2 class="featurette-heading fw-normal lh-1" th:text="#{divider.italian}"></h2>
 
-                            <p class="lead" >¿Has tenido la sensación alguna vez de entrar en un sitio y sentirte transportado a un lugar especial? Un lugar que te envuelve con su aroma, su decoración, su espíritu. Un lugar que te atrapa y mejora tu estado de ánimo en un momento. ¡Eso es precisamente lo que sientes al entrar en HJPM-Res, nuestro cálido restaurante a la que te trasnportará a la gastronomía italiana al instante </p>
+                            <p class="lead" th:text="#{divider.italian2}"> </p>
                         </div>
                         <div class="col-md-5">
                             <img src="images/home/hp12.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"  alt="descuento"/>
@@ -188,8 +188,8 @@
 
                     <div class="row featurette">
                         <div class="col-md-7 order-md-2">
-                            <h2 class="featurette-heading fw-normal lh-1">Chefs traidos desde los rincones de Italia <span class="text-muted">Venecia</span></h2>
-                            <p class="lead">En nuestros restaurantes, vas a poder disfrutar de diferentes tipos de platos que provienen directamente de la cocina tradicional italiana preparado por chefs italianos, que te sorprenderán. Cada receta, ingrediente, medida, porción, ha sido transmitido por generaciones y generaciones para finalmente poder ser ofrecido en nuestro restaurante. Contamos con más de 20 platillos tradicionales, incluidos pastas, pizzas y postres. En nuestros restaurantes, vas a poder tener una experiencia inigualable y deliciosa como si estuvieras en tierras italianas.</p>
+                            <h2 class="featurette-heading fw-normal lh-1" th:text="#{divider.chefs}"></h2>
+                            <p class="lead" th:text="#{divider.chefs2}"></p>
                         </div>
                         <div class="col-md-5 order-md-1">
                             <img src="images/home/hp13.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"  alt="descuento"/>
@@ -201,8 +201,8 @@
 
                     <div class="row featurette">
                         <div class="col-md-7">
-                            <h2 class="featurette-heading fw-normal lh-1">Certificado de excelencia desde el 2018 <span class="text-muted">TripAdvisor</span></h2>
-                            <p class="lead">Nuestros restaurantes han sido muchas veces galardonados durante los años de operación que tenemos. Uno de los más importantes es el “Top Italian Restaurants” de la casa italiana Gambero Rosso donde se evalúan más de 500 restaurantes a nivel mundial y con mucho orgullo hemos sido parte del top 10 durante los últimos 5 anos. Esto sin duda coloca nuestra cadena de restaurantes en el mapa mundial y a nuestro increíble personal.</p>
+                            <h2 class="featurette-heading fw-normal lh-1" th:text="#{divider.trip}"></h2>
+                            <p class="lead" th:text="#{divider.trip2}"></p>
                         </div>
                         <div class="col-md-5">
                             <img src="images/home/hp11.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"  alt="descuento"/>
