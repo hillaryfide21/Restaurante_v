@@ -40,45 +40,42 @@
                 <div class="modal-content rounded-4 shadow" style=" background: black; width: 700px;">
                     <div class="modal-header p-5 pb-4 border-bottom-0">
                         <!-- <h5 class="modal-title">Modal title</h5> -->
-                        <h2 class="fw-bold mb-0" style="color: white;">Trabaje con nosotros</h2>
+                        <h2 class="fw-bold mb-0" style="color: white;" th:text="#{navbar.trabajo}">Trabaje con nosotros</h2> 
                     </div>
 
                     <div class="modal-body p-5 pt-0">
-                        <form class="">
+                        <form class="" th:object="${soli}"
+                              th:action="@{/saveSolicitud}"
+                              method="POST">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Nombre</label>
+                                <input type="text" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com" th:field="*{nombre}">
+                                <label for="floatingInput" th:text="#{nombre}">Nombre</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
-                                <label for="floatingPassword">1er Apellido </label>
+                                <input type="text" class="form-control rounded-3" id="floatingPassword" placeholder="Password" th:field="*{cedula}">
+                                <label for="floatingPassword" th:text="#{cedula}">Cedula </label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
-                                <label for="floatingPassword">2do Apellido</label>
+                                <input type="email" class="form-control rounded-3" id="floatingPassword" placeholder="Password" th:field="*{correo}">
+                                <label for="floatingPassword" th:text="#{correo}">Correo</label>
                             </div>
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
-                                <label for="floatingPassword">Correo</label>
-                            </div>
-                            
-                                
-                                <input class="form-control rounded-3" type="file" id="formFile">
-                                
-                           
+
+
+                            <input class="form-control rounded-3" type="file" id="formFile">
+
+
                             <div class="form-floating mb-3" style="margin-top: 20px; " >
-                                <div class="dropdown">
-                                    <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%;">
-                                        Puesto
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
+
+                                <div class = "form-row">
+                                    <select th:field="*{puesto}" class="form-control form-control-sm col-md-6" id="puesto">
+                                        <option th:each="x:${puestos}"
+                                                value="${x.getId_puesto}"
+                                                th:text="${x.getNombre_puesto}"/>
+                                    </select>
                                 </div>
-                            </div>
-                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-success" type="submit">Enviar solicitud</button>
+                                <button class="w-100 mb-2 btn btn-lg rounded-3 btn-success" type="submit" th:text="#{botonenviar}">Enviar solicitud</button>
+
+                            </div>  
                         </form>
                     </div>
                 </div>

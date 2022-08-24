@@ -26,6 +26,7 @@ public class Puesto implements Serializable{
     private String nombre_puesto;
     private String detalle_puesto;
     private String requisito_puesto;
+    
 
     public long getId_puesto() {
         return id_puesto;

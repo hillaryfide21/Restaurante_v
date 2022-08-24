@@ -31,7 +31,7 @@ public class Usuarios implements Serializable {
        private String nombre_usuario;
        private String apellido1_usuario;
        private String apellido2_usuario;
-       private String dirección_usuario;
+       private String direccion_usuario;
        private String telefono_usuario;
        private String correo;
        
@@ -123,11 +123,11 @@ public class Usuarios implements Serializable {
     }
 
     public String getDireccion_usuario() {
-        return dirección_usuario;
+        return direccion_usuario;
     }
 
     public void setDirección_usuario(String dirección_usuario) {
-        this.dirección_usuario = dirección_usuario;
+        this.direccion_usuario = dirección_usuario;
     }
 
     public String getTelefono_usuario() {

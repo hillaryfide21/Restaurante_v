@@ -45,7 +45,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <div class="modal-content rounded-4 shadow" style=" background: black; width: 700px;">
                     <div class="modal-header p-5 pb-4 border-bottom-0">
                         <!-- <h5 class="modal-title">Modal title</h5> -->
-                        <h2 class="fw-bold mb-0" style="color: white;">Reserve ahora</h2>
+                        <h2 class="fw-bold mb-0" style="color: white;" th:text="#{card.espacio}"></h2> 
                     </div>
 
                     <div class="modal-body p-5 pt-0">
@@ -54,18 +54,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                           method="POST">
                         <div class = "form-row">
                             <select th:field="*{dia}" name = "days" id="dia_reserva">
-                                <option value = "day-select">Dia</option>
-                                <option value = "sunday">Sunday</option>
-                                <option value = "monday">Monday</option>
-                                <option value = "tuesday">Tuesday</option>
-                                <option value = "wednesday">Wednesday</option>
-                                <option value = "thursday">Thursday</option>
-                                <option value = "friday">Friday</option>
-                                <option value = "saturday">Saturday</option>
+                                <option value = "day-select" th:text="#{dia}">Dia</option>
+                                <option th:value = "#{domingo}" th:text="#{domingo}"></option>
+                                <option th:value = "#{lunes}" th:text="#{lunes}"></option>
+                                <option th:value = "#{martes}" th:text="#{martes}"></option>
+                                <option th:value = "#{Miercoles}" th:text="#{miercoles}"></option>
+                                <option th:value = "#{jueves}" th:text="#{jueves}"></option>
+                                <option th:value = "#{viernes}" th:text="#{viernes}"></option>
+                                <option th:value = "#{sabado}" th:text="#{sabado}"></option>
                             </select>
 
                             <select th:field="*{hora}" name = "hours" id="hora_reserva">
-                                <option value = "hour-select">Hora</option>
+                                <option value = "hour-select" th:text="#{hora}"></option>
                                 <option value = "11:00">11:00</option>
                                 <option value = "12:00">12:00</option>
                                 <option value = "13:00">13:00</option>
@@ -84,13 +84,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             </select>
                         </div>
                         <div class = "form-row">
-                            <input th:field="*{nombre}" type = "text" placeholder="Nombre completo">
-                            <input th:field="*{telefono}" type = "text" placeholder="Telefono contacto">
+                            <input th:field="*{nombre}" type = "text" th:placeholder="#{r.nombre}">
+                            <input th:field="*{telefono}" type = "text" th:placeholder="#{r.telefono}">
                         </div>
 
                         <div class = "form-row">
                             <select th:field="*{cantidad}" name = "hours" id="cantidad_reserva">
-                                <option value = "0">Cantidad personas</option>
+                                <option value = "0" th:text="#{r.cantidad}"></option>
                                 <option value = "1">1</option>
                                 <option value = "2">2</option>
                                 <option value = "3">3</option>
@@ -101,7 +101,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         </div>
 
                         <div class = "form-row">
-                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-success" type="submit">Guardar</button>
+                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-success" type="submit" th:text="#{car.reservar}">Guardar</button>
                         </div>
 
                     </form>

@@ -73,12 +73,16 @@
                                     <label for="floatingPassword">Telefono</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control rounded-3" id="floatingPassword" th:field="*{correo_usuario}" placeholder="Correo electrónico">
+                                    <input type="text" class="form-control rounded-3" id="floatingPassword" th:field="*{correo}" placeholder="Correo electrónico">
                                     <label for="floatingPassword">Correo electrónico</label>
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="password" class="form-control rounded-3" id="floatingPassword" th:field="*{contrasena_usuario}" placeholder="Password">
                                     <label for="floatingPassword">Contraseña</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control rounded-3" id="floatingPassword" th:field="*{id_rol}">
+                                    <label for="floatingPassword">Usuario tipo cliente</label>
                                 </div>
                                  <!--button class="w-100 mb-2 btn btn-lg rounded-3 btn-success"type="submit" class="btn btn-success" value="Guardar">Submit</button-->
                                 <button class="w-100 mb-2 btn btn-lg rounded-3 btn-success" type="submit" >Crear</button>

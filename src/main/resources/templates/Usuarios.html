@@ -20,19 +20,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
         <table  class="table table-dark table-striped">
                         <thead class="thead-dark">
-            <h1 h1 style="padding-bottom: 50px; color: white;" th:text= "${titulo}"></h1>
+            <h1 h1 style="padding-bottom: 50px; color: white;" th:text= "#{tablausuarios}"></h1>
 
             <tr>
 
                 
-                <th scope="col">Nombre </th>
-                <th scope="col">Apellido 1 </th>
-                <th scope="col">Apellido 2 </th>
-                <th scope="col">Direccion </th>
-                <th scope="col">Telefono </th>
-                <th scope="col">Email </th>
-                <th scope="col">password </th>
-                <th scope="col">Rol </th>
+                <th scope="col" th:text="#{nombre}">Nombre </th>
+                <th scope="col" th:text="#{apellido1}">Apellido 1 </th>
+                <th scope="col" th:text="#{apellido2}">Apellido 2 </th>
+                <th scope="col" th:text="#{dic}">Direccion </th>
+                <th scope="col" th:text="#{telefono}">Telefono </th>
+                <th scope="col" th:text="#{correo}">Email </th>
+                <th scope="col" th:text="#{permisos}">Rol</th>
                 <th scope="col">Editar </th>
                 <th scope="col">Eliminar </th>
             </tr>
@@ -45,8 +44,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <td th:text="${user.getApellido2_usuario}"></td>   
                 <td th:text="${user.getDireccion_usuario}"></td>                   
                 <td th:text="${user.getTelefono_usuario}"></td>
-                <td th:text="${user.getCorreo_usuario}"></td>
-                <td th:text="${user.getContrasena_usuario}"></td>
+                <td th:text="${user.getCorreo}"></td>
                 <td th:text="${user.getId_rol.getNombre_rol}"></td>
                 <td>
 
@@ -62,7 +60,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         </table>
         <div style="padding-top: 30px;">
             <a href="/usuariosN">  
-                <input type="submit" class="btn btn-success" value="Guardar" th:value="#{btn.nuevocupon}">
+                <input type="submit" class="btn btn-success" value="Guardar" th:value="#{newuser}">
             </a>
         </div>
 </body>

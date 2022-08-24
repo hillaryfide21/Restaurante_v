@@ -71,13 +71,6 @@ public class PuestoController {
         return "login";
     }
 
-    @GetMapping("/contactouser")
-    public String showContactUserForm() {
-        return "contactouser";
-    }
 
-    @GetMapping("/solicituduser")
-    public String showSolicitudUser() {
-        return "solicituduser";
-    }
+
 }

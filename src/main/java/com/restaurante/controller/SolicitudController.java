@@ -4,7 +4,9 @@
  */
 package com.restaurante.controller;
 
+import com.restaurante.entity.Puesto;
 import com.restaurante.entity.Solicitud;
+import com.restaurante.service.IPuestoService;
 import com.restaurante.service.ISolicitudService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class SolicitudController {
     @Autowired
     private ISolicitudService solicitudService;
+    @Autowired
+    private IPuestoService puestoService;
 /*
     //Trae los cupones disponibles para mostrarlos en una tabla de administración
     @GetMapping("/solicitud")
@@ -42,7 +46,15 @@ public class SolicitudController {
    @PostMapping("/saveSolicitud") 
     public String guardarSolicitud (@ModelAttribute Solicitud solicitud){ 
         solicitudService.saveSolicitud(solicitud);
-        return "redirect:/cupon";
+        return "redirect:/solicitudes";
+    }
+    
+        @GetMapping("/solicituduser")
+    public String showSolicitudUser(Model model) {
+        List<Puesto> listaPuesto = puestoService.getAllPuesto();
+        model.addAttribute("puestos", listaPuesto);
+        model.addAttribute("soli", new Solicitud());
+        return "solicituduser";
     }
     
    /* @GetMapping("/editPuesto/{id}")

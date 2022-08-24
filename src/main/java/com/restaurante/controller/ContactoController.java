@@ -34,10 +34,10 @@ public class ContactoController {
     }
     
     //Permite al usuario agregar un nuevo puesto 
-    @GetMapping("/contactonuevo")
+    @GetMapping("/contactouser")
     public String crearContacto(Model model) {
         model.addAttribute("contacto", new Contacto());
-        return "crearContacto";
+        return "/contactouser";
     }
     
    @PostMapping("/saveContacto") 
